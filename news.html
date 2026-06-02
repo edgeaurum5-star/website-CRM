@@ -1,0 +1,151 @@
+---
+layout: default
+title: "News & Intelligence"
+permalink: /news/
+---
+
+<div style="position:relative;z-index:1;">
+
+  <div style="padding:52px 40px 40px;border-bottom:1px solid var(--border);">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <span class="pulse"></span>
+      <span style="font-size:10px;letter-spacing:0.24em;color:var(--red);text-transform:uppercase;">Live Feed · Auto-Updates Every 60s</span>
+    </div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,60px);font-weight:400;line-height:1.1;color:var(--t1);">
+      Geopolitical <em style="color:var(--gold);font-style:italic;">Intelligence</em><br>&amp; Market News
+    </h1>
+    <p style="margin-top:12px;font-size:14px;line-height:1.8;color:var(--t2);max-width:500px;font-weight:300;">
+      Every conflict, sanction, and central bank signal decoded into its direct market impact on Gold, Forex, and Bitcoin.
+    </p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <button class="fbtn active" onclick="filterPosts(this,'all')">All</button>
+    <button class="fbtn" onclick="filterPosts(this,'war')">War &amp; Conflict</button>
+    <button class="fbtn" onclick="filterPosts(this,'gold')">Gold</button>
+    <button class="fbtn" onclick="filterPosts(this,'forex')">Forex</button>
+    <button class="fbtn" onclick="filterPosts(this,'bitcoin')">Bitcoin</button>
+    <button class="fbtn" onclick="filterPosts(this,'macro')">Macro / Fed</button>
+    <button class="fbtn" onclick="filterPosts(this,'oil')">Oil / Energy</button>
+    <div style="width:1px;height:20px;background:var(--border);flex-shrink:0;margin:0 4px;"></div>
+    <span id="lastUpdated" style="margin-left:auto;font-size:9px;letter-spacing:0.22em;color:var(--t3);text-transform:uppercase;white-space:nowrap;flex-shrink:0;">Live</span>
+  </div>
+
+  <!-- TWO-COLUMN LAYOUT: posts + sidebar -->
+  <div style="display:grid;grid-template-columns:1fr 320px;min-height:80vh;">
+
+    <!-- MAIN POSTS -->
+    <div style="border-right:1px solid var(--border);" id="postList">
+      {% assign sorted_news = site.news | sort: "date" | reverse %}
+      {% for post in sorted_news %}
+      <div class="post-row" data-cat="{{ post.category }}">
+        <a href="{{ post.url }}" style="display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:start;padding:26px 40px;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.02)'" onmouseout="this.style.background='transparent'">
+          <span style="font-size:10px;color:var(--t4);letter-spacing:0.1em;padding-top:3px;">{{ forloop.index | prepend:'0' | slice:-2,2 }}</span>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;flex-wrap:wrap;">
+              {% if post.alert_level == 'high' %}<span class="tag tag-r" style="margin:0;font-size:8px;">🔴 Breaking</span>
+              {% elsif post.alert_level == 'medium' %}<span style="background:rgba(255,180,0,0.1);color:#FFB400;font-size:8px;letter-spacing:0.28em;text-transform:uppercase;padding:3px 8px;">🟡 Watch</span>
+              {% else %}<span class="tag tag-x" style="margin:0;font-size:8px;">{{ post.category | capitalize }}</span>{% endif %}
+              {% if post.premium %}<span class="tag tag-g" style="margin:0;font-size:8px;">🔒 Premium</span>
+              {% else %}<span style="background:rgba(61,214,140,0.1);color:var(--green);font-size:8px;letter-spacing:0.28em;text-transform:uppercase;padding:3px 8px;">Free</span>{% endif %}
+            </div>
+            <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;line-height:1.35;color:var(--t1);margin-bottom:8px;">{{ post.title }}</h3>
+            <p style="font-size:11.5px;line-height:1.75;color:var(--t2);margin-bottom:10px;font-weight:300;">{{ post.excerpt | truncate:160 }}</p>
+            <div style="font-size:9px;letter-spacing:0.16em;color:var(--t4);text-transform:uppercase;display:flex;gap:14px;flex-wrap:wrap;">
+              <span>{{ post.date | date:"%b %d, %Y" }}</span>
+              {% if post.read_time %}<span>{{ post.read_time }} min</span>{% endif %}
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0;">
+            {% for imp in post.impacts limit:3 %}
+              <span class="pill {% if imp.direction == 'up' %}pill-up{% elsif imp.direction == 'down' %}pill-dn{% else %}pill-vol{% endif %}" style="font-size:8.5px;">{{ imp.asset }}</span>
+            {% endfor %}
+          </div>
+        </a>
+      </div>
+      {% else %}
+      <div style="padding:60px 40px;text-align:center;color:var(--t3);">
+        <p style="font-size:15px;margin-bottom:12px;">No posts yet.</p>
+        <p style="font-size:13px;">Go to <a href="/admin/" style="color:var(--gold);">/admin</a> to write your first news post.</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside style="padding:28px 22px;">
+
+      <!-- LIVE MARKET PRICES -->
+      <div style="margin-bottom:32px;">
+        <div class="sec-label" style="margin-bottom:16px;">Live Markets</div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);">
+            <div><div style="font-size:11px;color:var(--t2);letter-spacing:0.08em;">XAU/USD</div><div style="font-size:9px;color:var(--t4);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;">Gold</div></div>
+            <div style="text-align:right;"><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--gold);" id="p-gold">3,342.80</div><div id="c-gold" style="font-size:10px;letter-spacing:0.1em;" class="up">+1.42%</div></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);">
+            <div><div style="font-size:11px;color:var(--t2);letter-spacing:0.08em;">BTC/USD</div><div style="font-size:9px;color:var(--t4);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;">Bitcoin</div></div>
+            <div style="text-align:right;"><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--cyan);" id="p-btc">107,240</div><div id="c-btc" style="font-size:10px;" class="dn">−2.18%</div></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);">
+            <div><div style="font-size:11px;color:var(--t2);letter-spacing:0.08em;">EUR/USD</div><div style="font-size:9px;color:var(--t4);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;">Forex</div></div>
+            <div style="text-align:right;"><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;" id="p-eur">1.0841</div><div id="c-eur" style="font-size:10px;" class="dn">−0.31%</div></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;">
+            <div><div style="font-size:11px;color:var(--t2);letter-spacing:0.08em;">DXY</div><div style="font-size:9px;color:var(--t4);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;">Dollar Index</div></div>
+            <div style="text-align:right;"><div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;">104.32</div><div style="font-size:10px;" class="up">+0.24%</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBSCRIBE -->
+      <div style="margin-bottom:32px;">
+        <div class="sec-label" style="margin-bottom:16px;">Free Daily Brief</div>
+        <div style="background:linear-gradient(135deg,var(--card2),rgba(212,168,67,0.06));border:1px solid var(--border-g);padding:20px;">
+          <p style="font-size:12px;line-height:1.75;color:var(--t2);margin-bottom:16px;">Geopolitical events decoded before markets open — free every morning.</p>
+          <form onsubmit="handleSub(event,'sbEmail','sbOk')" style="display:flex;flex-direction:column;gap:8px;">
+            <input type="email" id="sbEmail" placeholder="your@email.com" style="padding:10px 14px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--t1);font-family:'Inter',sans-serif;font-size:12px;outline:none;">
+            <button type="submit" class="btn-gold" style="width:100%;font-size:10px;padding:11px;">Subscribe Free</button>
+          </form>
+          <p id="sbOk" style="display:none;color:var(--green);font-size:11px;margin-top:8px;">✓ Subscribed!</p>
+        </div>
+      </div>
+
+      <!-- ACADEMY CTA -->
+      {% assign s = site.data.settings %}
+      <div>
+        <div class="sec-label" style="margin-bottom:16px;">Academy</div>
+        <div style="background:var(--card);border:1px solid var(--border-g);padding:20px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);"></div>
+          <div style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">{{ s.cohort_name | default:'Now Enrolling' }}</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--t1);margin-bottom:10px;line-height:1.3;">Mastering Macro<br><em style="color:var(--gold);">Trading</em></div>
+          <p style="font-size:11px;line-height:1.7;color:var(--t2);margin-bottom:16px;">Learn to position in Gold, Forex &amp; Bitcoin using geopolitics.</p>
+          <a href="{{ s.gumroad_url | default:'/academy/' }}" target="_blank" rel="noopener"><button class="btn-gold" style="width:100%;font-size:10px;">Enroll {{ s.course_price | default:'$297' }} →</button></a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<style>
+.up{color:var(--green);}.dn{color:var(--red);}
+@media(max-width:960px){
+  div[style*="grid-template-columns:1fr 320px"]{display:block!important;}
+  aside{border-top:1px solid var(--border);}
+  a[style*="grid-template-columns:auto 1fr auto"]{padding:20px!important;display:block!important;}
+  div[style*="flex-direction:column;gap:5px"]{display:none!important;}
+  div[style*="padding:52px 40px"]{padding:36px 20px!important;}
+}
+</style>
+
+<script>
+function filterPosts(btn, cat) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.post-row').forEach(row => {
+    row.style.display = (cat === 'all' || row.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+</script>

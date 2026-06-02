@@ -1,0 +1,83 @@
+# ═══════════════════════════════════
+#  EDGE AURUM — Jekyll Configuration
+# ═══════════════════════════════════
+
+title:       "Edge Aurum"
+tagline:     "Intelligence Beyond the Charts"
+description: "Geopolitical intelligence decoded for Gold, Forex & Bitcoin traders. Daily news, deep analysis, and premium education."
+url:         "https://edgeaurum.com"
+baseurl:     ""
+email:       "hello@edgeaurum.com"
+lang:        "en"
+
+# ── MONETIZATION KEYS (fill these in) ──
+gumroad_product_url:  "https://gumroad.com/l/YOUR_PRODUCT_ID"  # your course link
+convertkit_form_id:   "YOUR_FORM_ID"                            # ConvertKit embed form ID
+convertkit_uid:       "YOUR_UID"                                # ConvertKit account UID
+telegram_url:         "https://t.me/edgeaurum"                  # your Telegram channel
+twitter_url:          "https://twitter.com/edgeaurum"
+twelve_data_key:      "YOUR_TWELVE_DATA_KEY"                    # twelvedata.com free key
+
+# ── BUILD ──
+markdown:  kramdown
+highlighter: rouge
+permalink: /:categories/:slug/
+
+kramdown:
+  input:        GFM
+  syntax_highlighter: rouge
+
+# ── COLLECTIONS ──
+collections:
+  news:
+    output:    true
+    permalink: /news/:slug/
+  analysis:
+    output:    true
+    permalink: /analysis/:slug/
+
+# ── DEFAULTS ──
+defaults:
+  - scope: { path: "", type: "news" }
+    values: { layout: "post", category: "news" }
+  - scope: { path: "", type: "analysis" }
+    values: { layout: "post", category: "analysis" }
+
+# ── PAGINATION ──
+pagination:
+  enabled:    true
+  per_page:   12
+  permalink:  "/page/:num/"
+  title:      ":title - Page :num"
+  sort_field: "date"
+  sort_reverse: true
+
+# ── PLUGINS ──
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+  - jekyll-redirect-from
+  - jekyll-last-modified-at
+
+# ── SEO ──
+twitter:
+  username: edgeaurum
+  card:     summary_large_image
+
+social:
+  name:  "Edge Aurum"
+  links:
+    - https://twitter.com/edgeaurum
+    - https://t.me/edgeaurum
+
+google_analytics: "G-XXXXXXXXXX"   # add your GA4 ID
+
+# ── EXCLUDE ──
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

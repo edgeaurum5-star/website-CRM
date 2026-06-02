@@ -1,0 +1,332 @@
+---
+layout: default
+title: "Markets Dashboard"
+permalink: /markets/
+description: "Live Gold, Bitcoin, Forex and Oil charts and prices — updated in real time."
+---
+{% assign s = site.data.settings %}
+
+<div style="position:relative;z-index:1;">
+
+  <!-- PAGE HEADER -->
+  <div style="padding:52px 40px 36px;border-bottom:1px solid var(--border);">
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,60px);font-weight:400;color:var(--t1);line-height:1.1;">
+      <em style="color:var(--gold);font-style:italic;">Live</em> Markets<br>Dashboard
+    </h1>
+    <p style="margin-top:12px;font-size:14px;line-height:1.8;color:var(--t2);max-width:560px;font-weight:300;">
+      Real-time Gold, Bitcoin, Forex &amp; Oil prices — powered by TradingView. The same live data used by institutional desks, free and auto-updating.
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 1: LIVE MINI CHARTS (4 cards)
+       Gold · BTC · EUR/USD · Oil
+       Same as CNBC's homepage asset cards
+       ═══════════════════════════════════════ -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="sec-label">Live Asset Prices</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px;">
+
+      <!-- GOLD -->
+      <div class="tv-mini-card card-g">
+        <span class="tv-card-label tag tag-g">XAU / USD · Gold</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"OANDA:XAUUSD","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true,"largeChartUrl":"","chartOnly":false,"noTimeScale":false}
+          </script>
+        </div>
+      </div>
+
+      <!-- BITCOIN -->
+      <div class="tv-mini-card card-c">
+        <span class="tv-card-label tag tag-c">BTC / USD · Bitcoin</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"BITSTAMP:BTCUSD","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true,"largeChartUrl":""}
+          </script>
+        </div>
+      </div>
+
+      <!-- EUR/USD -->
+      <div class="tv-mini-card">
+        <span class="tv-card-label tag tag-x">EUR / USD · Forex</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"FX:EURUSD","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true}
+          </script>
+        </div>
+      </div>
+
+      <!-- WTI OIL -->
+      <div class="tv-mini-card">
+        <span class="tv-card-label tag tag-x">WTI · Crude Oil</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"TVC:USOIL","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true}
+          </script>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ROW 2: Silver · DXY · USD/JPY · Nat Gas -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+      <div class="tv-mini-card">
+        <span class="tv-card-label tag tag-x">XAG / USD · Silver</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"OANDA:XAGUSD","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true}
+          </script>
+        </div>
+      </div>
+      <div class="tv-mini-card">
+        <span class="tv-card-label tag tag-x">DXY · Dollar Index</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"TVC:DXY","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true}
+          </script>
+        </div>
+      </div>
+      <div class="tv-mini-card">
+        <span class="tv-card-label tag tag-x">USD / JPY · Forex</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"FX:USDJPY","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true}
+          </script>
+        </div>
+      </div>
+      <div class="tv-mini-card">
+        <span class="tv-card-label tag tag-x">NAT GAS · Energy</span>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {"symbol":"CAPITALCOM:NATURALGAS","width":"100%","height":180,"locale":"en","dateRange":"1D","colorTheme":"dark","isTransparent":true,"autosize":true}
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 2: FULL INTERACTIVE CHART
+       Switchable between Gold / BTC / EUR/USD
+       ═══════════════════════════════════════ -->
+  <section class="section" style="padding-top:40px;">
+    <div class="sec-label">Advanced Chart</div>
+
+    <!-- Symbol switcher buttons -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+      <button class="chart-sym-btn active" onclick="switchChart('OANDA:XAUUSD','Gold (XAU/USD)',this)">Gold</button>
+      <button class="chart-sym-btn" onclick="switchChart('BITSTAMP:BTCUSD','Bitcoin (BTC/USD)',this)">Bitcoin</button>
+      <button class="chart-sym-btn" onclick="switchChart('FX:EURUSD','EUR/USD',this)">EUR/USD</button>
+      <button class="chart-sym-btn" onclick="switchChart('FX:GBPUSD','GBP/USD',this)">GBP/USD</button>
+      <button class="chart-sym-btn" onclick="switchChart('FX:USDJPY','USD/JPY',this)">USD/JPY</button>
+      <button class="chart-sym-btn" onclick="switchChart('TVC:DXY','DXY',this)">DXY</button>
+      <button class="chart-sym-btn" onclick="switchChart('TVC:USOIL','WTI Oil',this)">WTI Oil</button>
+      <button class="chart-sym-btn" onclick="switchChart('OANDA:XAGUSD','Silver (XAG/USD)',this)">Silver</button>
+    </div>
+
+    <div class="tv-chart-wrap" style="border:1px solid var(--border);">
+      <div class="tradingview-widget-container" id="mainChartContainer">
+        <div class="tradingview-widget-container__widget" id="mainChartWidget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async id="mainChartScript">
+        {
+          "autosize": true,
+          "symbol": "OANDA:XAUUSD",
+          "interval": "D",
+          "timezone": "Etc/UTC",
+          "theme": "dark",
+          "style": "1",
+          "locale": "en",
+          "backgroundColor": "rgba(13,17,23,1)",
+          "gridColor": "rgba(255,255,255,0.04)",
+          "hide_top_toolbar": false,
+          "hide_legend": false,
+          "save_image": false,
+          "calendar": false,
+          "hide_volume": false,
+          "support_host": "https://www.tradingview.com"
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 3: MARKET SCREENER
+       Live table of all forex + commodities
+       Exactly like CNBC Markets page
+       ═══════════════════════════════════════ -->
+  <section style="padding:52px 40px;background:var(--bg2);border-top:1px solid var(--border);">
+    <div class="sec-label">Market Screener — Forex &amp; Commodities</div>
+    <div class="tv-screener-wrap" style="border:1px solid var(--border);">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+        {
+          "width": "100%",
+          "height": 500,
+          "defaultColumn": "overview",
+          "screener_type": "forex",
+          "displayCurrency": "USD",
+          "colorTheme": "dark",
+          "locale": "en",
+          "isTransparent": true
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 4: ECONOMIC CALENDAR
+       Upcoming events that move markets
+       Crucial for your daily geo + market posts
+       ═══════════════════════════════════════ -->
+  <section style="padding:52px 40px;border-top:1px solid var(--border);">
+    <div class="sec-label">Economic Calendar — Upcoming Market Events</div>
+    <p style="font-size:13px;color:var(--t2);margin-bottom:24px;font-weight:300;max-width:560px;">Key central bank decisions, inflation releases, and geopolitical-adjacent economic events that directly affect Gold, Forex, and Bitcoin.</p>
+    <div class="tv-calendar-wrap" style="border:1px solid var(--border);">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+        {
+          "colorTheme": "dark",
+          "isTransparent": true,
+          "width": "100%",
+          "height": 600,
+          "locale": "en",
+          "importanceFilter": "0,1",
+          "currencyFilter": "USD,EUR,GBP,JPY,CHF,AUD,CAD,NZD,CNY"
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 5: WAR-MARKET CORRELATION
+       Your unique geopolitical data layer
+       ═══════════════════════════════════════ -->
+  <section style="padding:52px 40px;background:var(--bg2);border-top:1px solid var(--border);">
+    <div class="sec-label">Geopolitical Correlation Matrix</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+      <div style="background:var(--card);border:1px solid var(--border-g);padding:22px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);"></div>
+        <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--t1);margin-bottom:8px;">War Intensity → Gold</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--green);margin-bottom:10px;">+0.87</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.65;font-weight:300;">Strong positive. Every major conflict escalation since 2000 has produced a Gold safe-haven spike within 48–72 hours.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);padding:22px;">
+        <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--t1);margin-bottom:8px;">War Intensity → BTC</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--red);margin-bottom:10px;">−0.42</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.65;font-weight:300;">Moderate negative short-term. Initial risk-off flush followed by recovery if conflict drags and inflation narrative builds.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);padding:22px;">
+        <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--t1);margin-bottom:8px;">War Intensity → USD</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--green);margin-bottom:10px;">+0.71</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.65;font-weight:300;">Strong positive. Global flight-to-safety flows into US dollar assets during any geopolitical stress event.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);padding:22px;">
+        <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--t1);margin-bottom:8px;">Gold → BTC (30d)</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--gold);margin-bottom:10px;">+0.34</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.65;font-weight:300;">Weak positive over 30 days. Diverges sharply during acute war events when Gold pumps and BTC flushes immediately.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 6: KEY LEVELS (static reference)
+       ═══════════════════════════════════════ -->
+  <section style="padding:52px 40px;border-top:1px solid var(--border);">
+    <div class="sec-label">Key Price Levels to Watch</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+
+      <div style="background:var(--card);border:1px solid var(--border-g);padding:22px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);"></div>
+        <div style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--t4);margin-bottom:14px;">XAU/USD — Gold</div>
+        {% assign gold_levels = "Resistance 2|3,400|Round number|red,Resistance 1|3,365|Feb 2026 high|red,Current|3,342|Live price|gold,Support 1|3,290|Order block|green,Support 2|3,240|Weekly demand|green" | split:"," %}
+        {% for lvl in gold_levels %}{% assign lp = lvl | split:"|" %}
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:11px;"><span style="color:var(--t3);min-width:90px;">{{ lp[0] }}</span><span style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--{{ lp[3] }});">{{ lp[1] }}</span><span style="font-size:9px;color:var(--t4);text-align:right;">{{ lp[2] }}</span></div>
+        {% endfor %}
+      </div>
+
+      <div style="background:var(--card);border:1px solid rgba(0,200,224,0.2);padding:22px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);"></div>
+        <div style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--t4);margin-bottom:14px;">BTC/USD — Bitcoin</div>
+        {% assign btc_levels = "Resistance 2|112,000|ATH zone|red,Resistance 1|109,500|Supply block|red,Current|107,240|Live price|cyan,Support 1|104,000|Institutional|green,Support 2|98,500|Weekly demand|green" | split:"," %}
+        {% for lvl in btc_levels %}{% assign lp = lvl | split:"|" %}
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:11px;"><span style="color:var(--t3);min-width:90px;">{{ lp[0] }}</span><span style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--{{ lp[3] }});">{{ lp[1] }}</span><span style="font-size:9px;color:var(--t4);text-align:right;">{{ lp[2] }}</span></div>
+        {% endfor %}
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--border);padding:22px;">
+        <div style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--t4);margin-bottom:14px;">EUR/USD — Forex</div>
+        {% assign eur_levels = "Resistance 2|1.1000|Round number|red,Resistance 1|1.0920|April high|red,Current|1.0841|Live price|t1,Support 1|1.0780|Demand zone|green,Support 2|1.0680|March low|green" | split:"," %}
+        {% for lvl in eur_levels %}{% assign lp = lvl | split:"|" %}
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:11px;"><span style="color:var(--t3);min-width:90px;">{{ lp[0] }}</span><span style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--{{ lp[3] }});">{{ lp[1] }}</span><span style="font-size:9px;color:var(--t4);text-align:right;">{{ lp[2] }}</span></div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<style>
+.chart-sym-btn {
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
+  padding:8px 18px;background:transparent;border:1px solid var(--border);color:var(--t2);
+  cursor:pointer;transition:all 0.2s;
+}
+.chart-sym-btn:hover { border-color:var(--gold);color:var(--gold); }
+.chart-sym-btn.active { background:var(--gold-dim);border-color:var(--border-g);color:var(--gold); }
+@media(max-width:960px){
+  div[style*="padding:52px 40px"]{padding:36px 20px!important;}
+  .section{padding-left:20px!important;padding-right:20px!important;}
+  div[style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,1fr)!important;}
+  div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}
+}
+@media(max-width:520px){
+  div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important;}
+}
+</style>
+
+<script>
+// Switch the advanced chart symbol
+function switchChart(symbol, label, btn) {
+  document.querySelectorAll('.chart-sym-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Remove old widget and re-render with new symbol
+  const container = document.getElementById('mainChartContainer');
+  const oldScript = document.getElementById('mainChartScript');
+  if (oldScript) oldScript.remove();
+
+  const widget = document.getElementById('mainChartWidget');
+  widget.innerHTML = '';
+
+  const s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+  s.async = true;
+  s.id = 'mainChartScript';
+  s.text = JSON.stringify({
+    autosize: true, symbol: symbol, interval: 'D',
+    timezone: 'Etc/UTC', theme: 'dark', style: '1', locale: 'en',
+    backgroundColor: 'rgba(13,17,23,1)',
+    gridColor: 'rgba(255,255,255,0.04)',
+    hide_top_toolbar: false, hide_legend: false,
+    save_image: false, calendar: false,
+    support_host: 'https://www.tradingview.com'
+  });
+  container.appendChild(s);
+}
+</script>

@@ -1,0 +1,187 @@
+---
+layout: default
+title: "Academy — Mastering Macro Trading"
+permalink: /academy/
+description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intelligence. The only trading course that starts with world events, not indicators."
+---
+{% assign s = site.data.settings %}
+
+<!-- HERO -->
+<section style="position:relative;z-index:1;min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:80px 40px;overflow:hidden;border-bottom:1px solid var(--border);">
+  <div style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:180px;font-weight:800;color:rgba(212,168,67,0.025);letter-spacing:0.05em;pointer-events:none;white-space:nowrap;line-height:1;">ACADEMY</div>
+  <div style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border-g);padding:6px 16px;margin-bottom:24px;width:fit-content;">
+    <span class="pulse" style="width:7px;height:7px;"></span>
+    <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);">{{ s.cohort_name | default:'Now Enrolling' }} · {{ s.spots_left | default:'14' }} spots left</span>
+  </div>
+  <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,88px);font-weight:300;line-height:1.04;max-width:800px;color:var(--t1);">
+    Master <em style="color:var(--gold);font-style:italic;">Macro.</em><br>
+    <strong style="font-weight:700;">Trade the Conflict.</strong>
+  </h1>
+  <p style="margin-top:22px;font-size:14px;line-height:1.85;color:var(--t2);max-width:500px;font-weight:300;">
+    The only trading education that starts with geopolitics, not indicators. Learn why Gold, Forex, and Bitcoin move — and position before the herd reacts.
+  </p>
+  <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;align-items:center;">
+    <a href="{{ s.gumroad_url | default:'#pricing' }}" target="_blank" rel="noopener"><button class="btn-gold" style="font-size:11px;padding:15px 36px;">Enroll Now — {{ s.course_price | default:'$297' }}</button></a>
+    <a href="#curriculum"><button class="btn-outline">See Curriculum ↓</button></a>
+    <span style="font-size:11px;letter-spacing:0.1em;color:var(--t4);">→ Enrollment closes June 10, 2026</span>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<div style="display:grid;grid-template-columns:1fr 1fr;position:relative;z-index:1;">
+  <div style="padding:52px 40px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div style="font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);margin-bottom:18px;">The Problem</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;line-height:1.3;color:var(--t1);margin-bottom:18px;">Standard technical analysis fails when a war starts.</h2>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      {% assign problems = "RSI and MACD don't predict safe-haven demand from a missile strike.|Moving averages cannot model central bank panic buying of Gold.|Fibonacci levels break down during geopolitical liquidity events.|Most traders are always one news cycle behind institutional desks.|95% of retail traders lose money during high-volatility conflict events." | split:"|" %}
+      {% for p in problems %}
+      <div style="font-size:12.5px;line-height:1.75;color:var(--t2);padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;font-weight:300;"><span style="color:var(--t4);flex-shrink:0;">—</span><span>{{ p }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+  <div style="padding:52px 40px;background:linear-gradient(135deg,var(--bg2),rgba(212,168,67,0.04));border-bottom:1px solid var(--border);">
+    <div style="font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">The Solution</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;line-height:1.3;color:var(--t1);margin-bottom:18px;">Geopolitical intelligence read before the candle forms.</h2>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      {% assign solutions = "Learn the exact sequence: event → currency flow → asset repricing.|Understand why Gold is the first safe-haven and BTC is the last.|Know which Forex pairs strengthen and collapse under war pressure.|Position with institutional logic, not retail emotion.|Access daily briefings that decode world events into trade setups." | split:"|" %}
+      {% for sol in solutions %}
+      <div style="font-size:12.5px;line-height:1.75;color:var(--t2);padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;font-weight:300;"><span style="color:var(--gold);flex-shrink:0;">→</span><span>{{ sol }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- CURRICULUM + PRICING -->
+<div style="padding:64px 40px;background:var(--bg2);border-top:1px solid var(--border);position:relative;z-index:1;" id="curriculum">
+  <div class="sec-label">Course Curriculum</div>
+  <div style="display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start;">
+
+    <!-- MODULES -->
+    <div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;">
+        <span class="tag tag-g">Flagship Course 2026</span>
+        <span class="tag tag-x">8 Modules · Self-Paced + 3 Live Sessions</span>
+      </div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:600;line-height:1.15;margin-bottom:18px;color:var(--t1);">Mastering <em style="color:var(--gold);">Macro</em><br>Trading</h2>
+      <p style="font-size:13px;line-height:1.9;color:var(--t2);margin-bottom:28px;max-width:520px;font-weight:300;">An 8-module program combining geopolitical intelligence with market structure. You'll finish knowing exactly how to read a war bulletin, central bank statement, or sanctions announcement — and translate it into a trade.</p>
+
+      {% assign modules = "The Geopolitical Market Framework|How global events translate into capital flows. The exact sequence from trigger → currency reaction → asset repricing. 12 historical conflict case studies from 2001–2025.,Gold: The Ultimate Safe-Haven Playbook|Understanding Gold's role as war premium, inflation hedge, and central bank reserve asset. How to read central bank accumulation data. When Gold decouples from the USD and why.,Forex During Military Escalations|Which currencies strengthen and which collapse during conflict. The USD safe-haven paradox. How to trade EUR/USD and USD/JPY during energy supply disruptions. 8 live case studies.,Bitcoin in a Macro Crisis|BTC's evolving role — risk asset vs digital gold. Why BTC flushes short-term but recovers during prolonged conflicts. On-chain accumulation signals during geopolitical dips.,Reading Central Bank Conflict Responses|How the Fed, ECB, and BOJ respond to war-driven inflation. Rate decision frameworks during active conflicts. Reading between the lines of central bank communications.,Sanctions, Oil, and Energy Shocks|How energy supply disruptions cascade into currency and precious metal markets. Reading OPEC+ emergency decisions. Oil-Gold correlation during Hormuz-style events.,Live Trade Execution Framework|The exact decision tree from news alert to trade entry. Risk management during news volatility. Position sizing for geopolitical events. Live session recordings from real conflict events 2023–2025.,Build Your Own Intelligence System|How to set up a personal news monitoring framework. Which sources matter and which are noise. Creating your own pre-trade checklist using Edge Aurum's daily briefing methodology." | split:"," %}
+
+      <div style="font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Course Modules</div>
+      {% for mod in modules %}
+        {% assign parts = mod | split:"|" %}
+        {% assign mod_num = forloop.index %}
+        <div class="mod-item" id="mod{{ mod_num }}">
+          <div class="mod-hdr" onclick="toggleMod({{ mod_num }})">
+            <span style="font-size:9px;letter-spacing:0.24em;color:var(--t4);margin-right:12px;">0{{ mod_num }}</span>
+            <span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;flex:1;color:var(--t1);">{{ parts[0] }}</span>
+            <span class="mod-toggle" id="mt{{ mod_num }}">+</span>
+          </div>
+          <div class="mod-body" id="mb{{ mod_num }}" style="display:{% if mod_num == 1 %}block{% else %}none{% endif %};">{{ parts[1] }}</div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- PRICING CARD -->
+    <div style="position:sticky;top:88px;" id="pricing">
+      <div style="background:rgba(212,168,67,0.08);border:1px solid var(--border-g);padding:13px 16px;margin-bottom:16px;font-size:10px;letter-spacing:0.1em;color:var(--gold);text-align:center;line-height:1.6;">
+        🔥 {{ s.cohort_name | default:'June 2026 Cohort' }} — {{ s.spots_left | default:'14' }} spots remaining
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border-g);padding:32px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);"></div>
+        <div style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">One-Time Enrollment</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--gold);line-height:1;">{{ s.course_price | default:'$297' }}</div>
+        <div style="font-size:12px;color:var(--t3);margin-top:4px;letter-spacing:0.1em;margin-bottom:22px;">Lifetime access · No subscription</div>
+        {% assign features = "All 8 course modules + video lessons|3 live group sessions with Q&A|Lifetime access + all future updates|Private student Telegram community|30 days of Premium Daily Briefings|Geopolitical Trade Journal templates|Certificate of completion" | split:"|" %}
+        <ul style="list-style:none;margin-bottom:24px;">
+          {% for feat in features %}
+          <li style="font-size:12px;letter-spacing:0.04em;color:var(--t2);padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:12px;flex-shrink:0;">✓</span>{{ feat }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ s.gumroad_url | default:'#' }}" target="_blank" rel="noopener" style="display:block;">
+          <button class="btn-gold" style="width:100%;font-size:11px;padding:16px;">Enroll in {{ s.cohort_name | default:'June 2026 Cohort' }}</button>
+        </a>
+        <p style="font-size:10px;letter-spacing:0.1em;color:var(--t4);text-align:center;margin-top:14px;line-height:1.6;">🛡 7-day money-back guarantee<br>No questions asked.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section style="padding:64px 40px;border-top:1px solid var(--border);position:relative;z-index:1;">
+  <div class="sec-label">Student Results</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+    {% assign testimonials = "I finally understood why Gold moved +$200 in a day. After this course I positioned correctly before the Iran-Israel news hit. It changed how I approach every trade.|Ahmad K.|Forex Trader · Dubai,I was losing money every time there was a major news event. Now these events are my best opportunities. The geopolitical framework is something no other course teaches.|Sara M.|Gold & BTC Investor · London,Module 4 on Bitcoin during macro crises alone was worth the entire course fee. I stopped panic selling and started accumulating at the exact dips institutions were buying.|Bilal R.|Crypto Trader · Lahore" | split:"," %}
+    {% for t in testimonials %}
+      {% assign tparts = t | split:"|" %}
+      <div style="background:var(--card);border:1px solid var(--border);padding:26px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;font-style:italic;line-height:1.65;color:var(--t1);margin-bottom:18px;">"{{ tparts[0] }}"</div>
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--t3);">{{ tparts[1] }}</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:var(--gold);margin-top:4px;">{{ tparts[2] }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:64px 40px;background:var(--bg2);border-top:1px solid var(--border);position:relative;z-index:1;">
+  <div class="sec-label">Frequently Asked</div>
+  <div style="max-width:700px;">
+    {% assign faqs = "Do I need trading experience to join?|No. The course is designed for all levels. Beginners learn the foundational framework; experienced traders add a geopolitical layer to their existing analysis. Early modules build foundational understanding before advancing to live trade execution.,What markets does the course cover?|Gold (XAU/USD), Bitcoin (BTC/USD), major Forex pairs (EUR/USD, USD/JPY, GBP/USD, AUD/USD), the US Dollar Index (DXY), and Oil (WTI) as a secondary indicator for Gold and Forex positioning.,Is this live or self-paced?|Both. Core modules are pre-recorded for self-paced study. Each cohort includes 3 live group sessions with Q&A where we review current events and discuss active trade setups in real time.,How long do I have access?|Lifetime access. Once enrolled you own the course forever including all future updates and case studies at no extra cost.,Do you accept crypto payment?|Yes. We accept credit/debit cards, PayPal, and USDT/BTC upon request. Contact us before enrolling to arrange crypto payment." | split:"," %}
+    {% for faq in faqs %}
+      {% assign fparts = faq | split:"|" %}
+      {% assign fi = forloop.index %}
+      <div style="border-bottom:1px solid var(--border);">
+        <div onclick="toggleFaq({{ fi }})" style="padding:16px 0;cursor:pointer;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--t1);display:flex;justify-content:space-between;align-items:center;">
+          {{ fparts[0] }}<span id="fi{{ fi }}" style="color:var(--gold);font-size:18px;transition:transform 0.3s;">+</span>
+        </div>
+        <div id="fa{{ fi }}" style="display:none;padding-bottom:16px;font-size:12px;line-height:1.85;color:var(--t2);font-weight:300;">{{ fparts[1] }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section style="padding:64px 40px;text-align:center;position:relative;z-index:1;background:linear-gradient(135deg,var(--bg),rgba(212,168,67,0.04));border-top:1px solid var(--border-g);">
+  <div style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Limited Enrollment</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,56px);font-weight:600;color:var(--t1);margin-bottom:16px;">Ready to trade with <em style="color:var(--gold);">the edge</em>?</h2>
+  <p style="font-size:14px;color:var(--t2);max-width:480px;margin:0 auto 28px;line-height:1.75;font-weight:300;">{{ s.cohort_name | default:'June 2026 Cohort' }} · Only {{ s.spots_left | default:'14' }} spots remaining · Enrollment closes June 10, 2026</p>
+  <a href="{{ s.gumroad_url | default:'#' }}" target="_blank" rel="noopener"><button class="btn-gold" style="font-size:12px;padding:16px 44px;">Enroll Now — {{ s.course_price | default:'$297' }} →</button></a>
+  <p style="font-size:11px;color:var(--t4);margin-top:14px;letter-spacing:0.08em;">7-day money-back guarantee · Lifetime access · Not financial advice</p>
+</section>
+
+<style>
+.mod-item{border:1px solid var(--border);margin-bottom:8px;transition:border-color 0.2s;}
+.mod-item:hover{border-color:rgba(255,255,255,0.14);}
+.mod-hdr{padding:14px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
+.mod-toggle{font-size:16px;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
+.mod-body{padding:0 18px 16px;font-size:12px;line-height:1.8;color:var(--t2);font-weight:300;}
+@media(max-width:960px){
+  section[style*="padding:80px 40px"]{padding:60px 20px!important;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:1fr 380px"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}
+  div[style*="position:sticky"]{position:static!important;}
+  div[style*="padding:52px 40px"]{padding:36px 20px!important;}
+  div[style*="padding:64px 40px"]{padding:44px 20px!important;}
+  section[style*="padding:64px 40px"]{padding:44px 20px!important;}
+  div[style*="right:-20px"]{display:none!important;}
+}
+</style>
+<script>
+function toggleMod(n) {
+  const b = document.getElementById('mb'+n);
+  const t = document.getElementById('mt'+n);
+  const open = b.style.display !== 'none';
+  b.style.display = open ? 'none' : 'block';
+  t.style.transform = open ? 'rotate(0deg)' : 'rotate(45deg)';
+}
+function toggleFaq(n) {
+  const a = document.getElementById('fa'+n);
+  const i = document.getElementById('fi'+n);
+  const open = a.style.display !== 'none';
+  a.style.display = open ? 'none' : 'block';
+  i.style.transform = open ? 'rotate(0deg)' : 'rotate(45deg)';
+}
+</script>
