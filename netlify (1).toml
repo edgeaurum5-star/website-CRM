@@ -1,0 +1,36 @@
+[build]
+  command = "bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  JEKYLL_ENV = "production"
+  RUBY_VERSION = "3.1.0"
+
+[context.production]
+  command = "bundle exec jekyll build"
+
+[[plugins]]
+  # Removed @netlify/plugin-gatsby — this is a Jekyll site, not Gatsby
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Referrer-Policy = "strict"
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.images]
+  compress = true
+
+[build.processing.html]
+  pretty_urls = true
