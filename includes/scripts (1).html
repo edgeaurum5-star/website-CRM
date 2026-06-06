@@ -1,0 +1,117 @@
+<script>
+// ═══════════════════════════════════════════════
+//  EDGE AURUM — Global Scripts
+// ═══════════════════════════════════════════════
+
+// ── MOBILE MENU ──
+function toggleMenu() {
+  const m = document.getElementById('mobMenu');
+  m.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  const m = document.getElementById('mobMenu');
+  const btn = document.querySelector('.hamburger');
+  if (m && m.classList.contains('open') && !m.contains(e.target) && btn && !btn.contains(e.target)) {
+    m.classList.remove('open');
+  }
+});
+
+// Sticky nav shadow on scroll
+window.addEventListener('scroll', function() {
+  const nav = document.getElementById('mainNav');
+  if (nav) nav.style.boxShadow = window.scrollY > 10 ? '0 2px 24px rgba(0,0,0,0.4)' : 'none';
+});
+
+// ── EMAIL SUBSCRIPTION ──
+// Set your ConvertKit/MailerLite URL in _config.yml → convertkit_form_id
+// This function handles the fallback form on subscribe banners
+const CK_URL = 'https://app.convertkit.com/forms/{{ site.convertkit_form_id }}/subscriptions';
+
+function handleSub(event, emailId, successId) {
+  if (event) event.preventDefault();
+  const el = document.getElementById(emailId);
+  if (!el) return;
+  const email = el.value.trim();
+  if (!email || !email.includes('@')) { el.focus(); return; }
+
+  // Submit to ConvertKit (uncomment once you have your form ID)
+  // fetch(CK_URL, {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({ email_address: email })
+  // }).catch(()=>{});
+
+  el.value = '';
+  const ok = document.getElementById(successId);
+  if (ok) { ok.style.display = 'block'; setTimeout(() => ok.style.display = 'none', 6000); }
+}
+
+// ── LIVE PRICES ──
+// BTC:  CoinGecko free API (no key needed) — refreshes every 60 seconds
+// Gold + Forex + DXY:  Twelve Data free tier — refreshes every 5 minutes
+// Get your free key at https://twelvedata.com (takes 2 minutes)
+
+const TWELVE_KEY = '{{ site.twelve_data_key }}';
+
+const fmt   = (n, d=2) => Number(n).toLocaleString('en-US', { minimumFractionDigits:d, maximumFractionDigits:d });
+const pct   = n => (n >= 0 ? '+' : '') + Number(n).toFixed(2) + '%';
+const arrow = n => n >= 0 ? '↑' : '↓';
+
+function setEl(id, val)  { const e = document.getElementById(id); if (e) e.textContent = val; }
+function setChgEl(id, chg, upClass='ti-up', dnClass='ti-dn') {
+  const e = document.getElementById(id);
+  if (!e) return;
+  e.textContent = pct(chg);
+  e.className = chg >= 0 ? upClass : dnClass;
+}
+function setAssetCard(prefix, price, chg, fmtDecimals, sentUp, sentDn) {
+  setEl(`p-${prefix}`, fmt(price, fmtDecimals));
+  const ce = document.getElementById(`c-${prefix}`);
+  if (ce) { ce.textContent = arrow(chg) + ' ' + pct(chg); ce.className = 'a-chg ' + (chg >= 0 ? 'up' : 'dn'); }
+  setEl(`s-${prefix}`, chg >= 0 ? sentUp : sentDn);
+}
+
+// CoinGecko — BTC (60s)
+async function fetchBTC() {
+  try {
+    const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true');
+    const d = await r.json();
+    if (d.bitcoin) {
+      const p = d.bitcoin.usd, c = d.bitcoin.usd_24h_change;
+      setEl('tk-btc', fmt(p, 0)); setChgEl('tk-btc-c', c);
+      setAssetCard('btc', p, c, 0, 'Institutional Accumulation', 'Risk-Off Flush Active');
+    }
+    const ts = document.getElementById('lastUpdated');
+    if (ts) ts.textContent = 'Updated ' + new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
+  } catch(e) { console.warn('CoinGecko error:', e); }
+}
+
+// Twelve Data — Gold + EUR/USD + DXY (5min)
+async function fetchForexGold() {
+  if (!TWELVE_KEY || TWELVE_KEY === 'YOUR_TWELVE_DATA_KEY') return;
+  try {
+    const r = await fetch(`https://api.twelvedata.com/quote?symbol=XAU/USD,EUR/USD,DXY&apikey=${TWELVE_KEY}`);
+    const d = await r.json();
+    if (d['XAU/USD']) {
+      const p = parseFloat(d['XAU/USD'].close), c = parseFloat(d['XAU/USD'].percent_change);
+      setEl('tk-gold', fmt(p)); setChgEl('tk-gold-c', c);
+      setAssetCard('gold', p, c, 2, 'Safe-Haven Demand Rising', 'War Premium Stabilising');
+    }
+    if (d['EUR/USD']) {
+      const p = parseFloat(d['EUR/USD'].close), c = parseFloat(d['EUR/USD'].percent_change);
+      setEl('tk-eur', fmt(p, 4)); setChgEl('tk-eur-c', c);
+      setAssetCard('eur', p, c, 4, 'EUR Recovery Attempt', 'USD Strength Dominating');
+    }
+    if (d['DXY']) {
+      const p = parseFloat(d['DXY'].close), c = parseFloat(d['DXY'].percent_change);
+      setEl('tk-dxy', fmt(p)); setChgEl('tk-dxy-c', c);
+    }
+  } catch(e) { console.warn('Twelve Data error:', e); }
+}
+
+// Run on load + schedule
+fetchBTC();
+fetchForexGold();
+setInterval(fetchBTC,       60  * 1000);   // BTC:  60 seconds
+setInterval(fetchForexGold, 300 * 1000);   // Rest: 5 minutes
+</script>
