@@ -1,0 +1,192 @@
+# ═══════════════════════════════════════════════════════
+#  EDGE AURUM — Decap CMS Configuration
+#  Access at: edgeaurum.com/admin
+#  This is your daily posting dashboard.
+# ═══════════════════════════════════════════════════════
+
+backend:
+  name:   git-gateway
+  branch: main
+  commit_messages:
+    create:  "New post: {{collection}} — {{slug}}"
+    update:  "Update: {{collection}} — {{slug}}"
+    delete:  "Delete: {{collection}} — {{slug}}"
+    uploadMedia: "Upload: {{path}}"
+
+media_folder:  "assets/images"
+public_folder: "/assets/images"
+
+show_preview_links: true
+publish_mode: editorial_workflow   # Draft → Review → Published stages
+
+# ══════════════════════════════
+#  COLLECTION 1: DAILY NEWS
+# ══════════════════════════════
+collections:
+
+  - name:           "news"
+    label:          "📰 Daily News"
+    label_singular: "News Post"
+    description:    "Your daily geopolitical intelligence brief. Write here, hit Publish, site updates in 30 seconds."
+    folder:         "_news"
+    create:         true
+    slug:           "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path:   "news/{{slug}}"
+
+    fields:
+      - label:   "Headline"
+        name:    "title"
+        widget:  "string"
+        hint:    "e.g. Gold Surges as Hormuz Tensions Escalate — keep under 80 chars"
+
+      - label:   "Publish Date"
+        name:    "date"
+        widget:  "datetime"
+
+      - label:   "Alert Level"
+        name:    "alert_level"
+        widget:  "select"
+        options:
+          - { label: "🔴 Breaking / High Volatility",  value: "high"   }
+          - { label: "🟡 Medium — Watch",               value: "medium" }
+          - { label: "🟢 Low / Informational",          value: "low"    }
+        default: "medium"
+
+      - label:   "Category"
+        name:    "category"
+        widget:  "select"
+        options:
+          - { label: "⚔️  War & Conflict",  value: "war"     }
+          - { label: "🥇 Gold",              value: "gold"    }
+          - { label: "₿  Bitcoin",           value: "bitcoin" }
+          - { label: "💱 Forex",             value: "forex"   }
+          - { label: "🏦 Macro / Fed",       value: "macro"   }
+          - { label: "🛢️  Oil / Energy",     value: "oil"     }
+        default: "macro"
+
+      - label:       "Asset Impacts"
+        name:        "impacts"
+        widget:      "list"
+        hint:        "Add each asset affected — shows as coloured pills in the feed"
+        summary:     "{{fields.asset}} — {{fields.direction}}"
+        fields:
+          - label:   "Asset"
+            name:    "asset"
+            widget:  "select"
+            options: ["Gold ↑","Gold ↓","BTC ↑","BTC ↓","USD ↑","USD ↓","EUR ↑","EUR ↓","Oil ↑","Oil ↓","JPY ↑","JPY ↓","DXY ↑","Gold Volatile","BTC Volatile","Oil Volatile"]
+          - label:   "Pill Style"
+            name:    "direction"
+            widget:  "select"
+            options:
+              - { label: "Green (bullish)",  value: "up"       }
+              - { label: "Red (bearish)",    value: "down"     }
+              - { label: "Orange (volatile)",value: "volatile" }
+
+      - label:   "Summary (shown in feed)"
+        name:    "excerpt"
+        widget:  "text"
+        hint:    "2–3 sentences. This is what readers see in the news list before clicking."
+
+      - label:   "Full Article"
+        name:    "body"
+        widget:  "markdown"
+        hint:    "Full analysis. Use ## headings, bullet points, bold text freely."
+
+      - label:   "Featured Post?"
+        name:    "featured"
+        widget:  "boolean"
+        default: false
+        hint:    "Show as top story on homepage and news page."
+
+      - label:   "🔒 Premium / Paid Only?"
+        name:    "premium"
+        widget:  "boolean"
+        default: false
+        hint:    "Lock full content behind Academy paywall."
+
+      - label:   "Cover Image (optional)"
+        name:    "image"
+        widget:  "image"
+        required: false
+        hint:    "Optional. Shown at top of article and in social share previews."
+
+      - label:   "SEO Description"
+        name:    "seo_description"
+        widget:  "text"
+        required: false
+        hint:    "Optional. Custom meta description for Google. Leave blank to use excerpt."
+
+  # ══════════════════════════════
+  #  COLLECTION 2: DEEP ANALYSIS
+  # ══════════════════════════════
+  - name:           "analysis"
+    label:          "🔬 Deep Analysis"
+    label_singular: "Analysis Post"
+    description:    "Long-form geopolitical market research. These build your authority and convert readers to Academy students."
+    folder:         "_analysis"
+    create:         true
+    slug:           "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path:   "analysis/{{slug}}"
+
+    fields:
+      - label:  "Title"
+        name:   "title"
+        widget: "string"
+
+      - label:  "Publish Date"
+        name:   "date"
+        widget: "datetime"
+
+      - label:    "Topic Tags"
+        name:     "tags"
+        widget:   "select"
+        multiple: true
+        options:  ["Gold","Bitcoin","Forex","War Cycles","Fed Policy","Oil","Sanctions","Safe-Haven","DXY","Central Banks","Inflation","Geopolitics"]
+
+      - label:   "Read Time (minutes)"
+        name:    "read_time"
+        widget:  "number"
+        default: 8
+        value_type: int
+
+      - label:   "Excerpt (shown in listing)"
+        name:    "excerpt"
+        widget:  "text"
+
+      - label:   "Full Article"
+        name:    "body"
+        widget:  "markdown"
+
+      - label:   "Featured?"
+        name:    "featured"
+        widget:  "boolean"
+        default: false
+
+      - label:   "🔒 Premium Only?"
+        name:    "premium"
+        widget:  "boolean"
+        default: false
+
+      - label:   "Cover Image (optional)"
+        name:    "image"
+        widget:  "image"
+        required: false
+
+  # ══════════════════════════════
+  #  COLLECTION 3: SITE SETTINGS
+  # ══════════════════════════════
+  - name:  "settings"
+    label: "⚙️  Site Settings"
+    files:
+      - name:  "general"
+        label: "General Settings"
+        file:  "_data/settings.yml"
+        fields:
+          - { label: "Breaking News Banner Text",    name: "banner_text",    widget: "string",  hint: "Shown in the red alert bar at top of homepage. Leave blank to hide." }
+          - { label: "Banner Alert Level",           name: "banner_level",   widget: "select", options: ["high","medium","low"], default: "high" }
+          - { label: "Gumroad Course URL",           name: "gumroad_url",    widget: "string",  hint: "Your Gumroad product link for the Academy course" }
+          - { label: "Course Price",                 name: "course_price",   widget: "string",  default: "$297" }
+          - { label: "Cohort Name",                  name: "cohort_name",    widget: "string",  default: "June 2026 Cohort" }
+          - { label: "Spots Remaining",              name: "spots_left",     widget: "number",  default: 14 }
+          - { label: "Telegram Channel URL",         name: "telegram_url",   widget: "string" }
+          - { label: "ConvertKit Form ID",           name: "ck_form_id",     widget: "string" }
