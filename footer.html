@@ -1,0 +1,70 @@
+{% assign s = site.data.settings %}
+<footer>
+  <div class="footer-top">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <img src="/ea-logo.png" alt="Edge Aurum" style="height:40px;width:auto;">
+        <div>
+          <div class="fb-name">EDGE<span>AURUM</span></div>
+          <div class="fb-tag">edgeaurum.com</div>
+        </div>
+      </div>
+      <p class="fb-desc">Geopolitical intelligence decoded for Gold, Forex &amp; Bitcoin traders. Daily news, deep analysis, and premium education.</p>
+      <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+        <a href="https://twitter.com/edgeaurum" target="_blank" rel="noopener" class="social-link">Twitter / X</a>
+        {% if s.telegram_url %}<a href="{{ s.telegram_url }}" target="_blank" rel="noopener" class="social-link">Telegram</a>{% endif %}
+        <a href="/academy/" class="social-link" style="color:var(--gold)!important;">Academy →</a>
+      </div>
+    </div>
+
+    <!-- NAV LINKS -->
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="/">Home</a>
+      <a href="/news/">News &amp; Intelligence</a>
+      <a href="/markets/">Markets Dashboard</a>
+      <a href="/analysis/">Deep Analysis</a>
+      <a href="/academy/">Academy</a>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-col">
+      <h4>Free Daily Brief</h4>
+      <p style="font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.65;">Geopolitical events decoded before markets open — free every morning.</p>
+      <form onsubmit="handleSub(event,'fEmail','fOk')" style="display:flex;flex-direction:column;gap:8px;">
+        <input type="email" id="fEmail" placeholder="your@email.com"
+          style="padding:10px 14px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--t1);font-family:'Inter',sans-serif;font-size:12px;outline:none;">
+        <button type="submit" class="btn-gold" style="font-size:10px;padding:11px;">Subscribe Free</button>
+      </form>
+      <p id="fOk" style="display:none;color:var(--green);font-size:11px;margin-top:8px;letter-spacing:0.06em;">✓ Subscribed! Check your inbox.</p>
+    </div>
+
+  </div>
+
+  <!-- MONETIZATION ROW -->
+  <div class="footer-monetize">
+    <a href="{{ s.gumroad_url | default: '/academy/' }}" target="_blank" rel="noopener" class="footer-product-link">
+      <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);">Flagship Course</span>
+      <span style="font-size:13px;font-weight:600;color:var(--t1);">Mastering Macro Trading — {{ s.course_price | default: '$297' }}</span>
+      <span style="font-size:10px;color:var(--t3);">{{ s.cohort_name | default: 'Enrolling now' }} · Enroll →</span>
+    </a>
+    {% if s.telegram_url %}
+    <a href="{{ s.telegram_url }}" target="_blank" rel="noopener" class="footer-product-link">
+      <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cyan);">Free Community</span>
+      <span style="font-size:13px;font-weight:600;color:var(--t1);">Telegram Channel</span>
+      <span style="font-size:10px;color:var(--t3);">Daily signals &amp; discussion · Join free →</span>
+    </a>
+    {% endif %}
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">Not financial advice. Past performance is not indicative of future results. © 2026 EdgeAurum · edgeaurum.com</span>
+    <span style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--t4);">
+      <a href="/privacy/" style="color:var(--t4);text-decoration:none;">Privacy</a> ·
+      <a href="/terms/"   style="color:var(--t4);text-decoration:none;">Terms</a> ·
+      <a href="/admin/"   style="color:var(--t4);text-decoration:none;">Admin</a>
+    </span>
+  </div>
+</footer>
