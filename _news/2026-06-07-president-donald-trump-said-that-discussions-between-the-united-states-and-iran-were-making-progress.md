@@ -3,7 +3,7 @@ title: President Donald Trump said that discussions between the United States
   and Iran were making progress
 date: 2026-06-07T22:26:00.000+05:00
 alert_level: high
-category: war
+category: macro
 excerpt: On June 7, 2026, U.S. President Donald Trump said that discussions
   between the United States and Iran were making progress and that both sides
   appeared to be moving closer to an agreement. The development was viewed
