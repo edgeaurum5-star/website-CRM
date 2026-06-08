@@ -1,7 +1,5 @@
 # ═══════════════════════════════════════════════════════
 #  EDGE AURUM — Decap CMS Configuration
-#  Access at: edgeaurum.com/admin
-#  This is your daily posting dashboard.
 # ═══════════════════════════════════════════════════════
 
 backend:
@@ -17,17 +15,14 @@ media_folder:  "assets/images"
 public_folder: "/assets/images"
 
 show_preview_links: true
-publish_mode: editorial_workflow   # Draft → Review → Published stages
+# editorial_workflow REMOVED — posts now publish instantly on Save
 
-# ══════════════════════════════
-#  COLLECTION 1: DAILY NEWS
-# ══════════════════════════════
 collections:
 
   - name:           "news"
     label:          "📰 Daily News"
     label_singular: "News Post"
-    description:    "Your daily geopolitical intelligence brief. Write here, hit Publish, site updates in 30 seconds."
+    description:    "Your daily geopolitical intelligence brief."
     folder:         "_news"
     create:         true
     slug:           "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -78,9 +73,9 @@ collections:
             name:    "direction"
             widget:  "select"
             options:
-              - { label: "Green (bullish)",  value: "up"       }
-              - { label: "Red (bearish)",    value: "down"     }
-              - { label: "Orange (volatile)",value: "volatile" }
+              - { label: "Green (bullish)",   value: "up"       }
+              - { label: "Red (bearish)",     value: "down"     }
+              - { label: "Orange (volatile)", value: "volatile" }
 
       - label:   "Summary (shown in feed)"
         name:    "excerpt"
@@ -104,25 +99,22 @@ collections:
         default: false
         hint:    "Lock full content behind Academy paywall."
 
-      - label:   "Cover Image (optional)"
-        name:    "image"
-        widget:  "image"
+      - label:    "Cover Image (optional)"
+        name:     "image"
+        widget:   "image"
         required: false
-        hint:    "Optional. Shown at top of article and in social share previews."
+        hint:     "Optional. Shown at top of article and in social share previews."
 
-      - label:   "SEO Description"
-        name:    "seo_description"
-        widget:  "text"
+      - label:    "SEO Description"
+        name:     "seo_description"
+        widget:   "text"
         required: false
-        hint:    "Optional. Custom meta description for Google. Leave blank to use excerpt."
+        hint:     "Optional. Custom meta description for Google. Leave blank to use excerpt."
 
-  # ══════════════════════════════
-  #  COLLECTION 2: DEEP ANALYSIS
-  # ══════════════════════════════
   - name:           "analysis"
     label:          "🔬 Deep Analysis"
     label_singular: "Analysis Post"
-    description:    "Long-form geopolitical market research. These build your authority and convert readers to Academy students."
+    description:    "Long-form geopolitical market research."
     folder:         "_analysis"
     create:         true
     slug:           "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -143,19 +135,19 @@ collections:
         multiple: true
         options:  ["Gold","Bitcoin","Forex","War Cycles","Fed Policy","Oil","Sanctions","Safe-Haven","DXY","Central Banks","Inflation","Geopolitics"]
 
-      - label:   "Read Time (minutes)"
-        name:    "read_time"
-        widget:  "number"
-        default: 8
+      - label:    "Read Time (minutes)"
+        name:     "read_time"
+        widget:   "number"
+        default:  8
         value_type: int
 
-      - label:   "Excerpt (shown in listing)"
-        name:    "excerpt"
-        widget:  "text"
+      - label:  "Excerpt (shown in listing)"
+        name:   "excerpt"
+        widget: "text"
 
-      - label:   "Full Article"
-        name:    "body"
-        widget:  "markdown"
+      - label:  "Full Article"
+        name:   "body"
+        widget: "markdown"
 
       - label:   "Featured?"
         name:    "featured"
@@ -167,14 +159,11 @@ collections:
         widget:  "boolean"
         default: false
 
-      - label:   "Cover Image (optional)"
-        name:    "image"
-        widget:  "image"
+      - label:    "Cover Image (optional)"
+        name:     "image"
+        widget:   "image"
         required: false
 
-  # ══════════════════════════════
-  #  COLLECTION 3: SITE SETTINGS
-  # ══════════════════════════════
   - name:  "settings"
     label: "⚙️  Site Settings"
     files:
@@ -182,11 +171,11 @@ collections:
         label: "General Settings"
         file:  "_data/settings.yml"
         fields:
-          - { label: "Breaking News Banner Text",    name: "banner_text",    widget: "string",  hint: "Shown in the red alert bar at top of homepage. Leave blank to hide." }
-          - { label: "Banner Alert Level",           name: "banner_level",   widget: "select", options: ["high","medium","low"], default: "high" }
-          - { label: "Gumroad Course URL",           name: "gumroad_url",    widget: "string",  hint: "Your Gumroad product link for the Academy course" }
-          - { label: "Course Price",                 name: "course_price",   widget: "string",  default: "$297" }
-          - { label: "Cohort Name",                  name: "cohort_name",    widget: "string",  default: "June 2026 Cohort" }
-          - { label: "Spots Remaining",              name: "spots_left",     widget: "number",  default: 14 }
-          - { label: "Telegram Channel URL",         name: "telegram_url",   widget: "string" }
-          - { label: "ConvertKit Form ID",           name: "ck_form_id",     widget: "string" }
+          - { label: "Breaking News Banner Text", name: "banner_text",  widget: "string"  }
+          - { label: "Banner Alert Level",        name: "banner_level", widget: "select", options: ["high","medium","low"], default: "high" }
+          - { label: "Gumroad Course URL",        name: "gumroad_url",  widget: "string"  }
+          - { label: "Course Price",              name: "course_price", widget: "string",  default: "$297" }
+          - { label: "Cohort Name",               name: "cohort_name",  widget: "string",  default: "June 2026 Cohort" }
+          - { label: "Spots Remaining",           name: "spots_left",   widget: "number",  default: 14 }
+          - { label: "Telegram Channel URL",      name: "telegram_url", widget: "string"  }
+          - { label: "ConvertKit Form ID",        name: "ck_form_id",   widget: "string"  }
