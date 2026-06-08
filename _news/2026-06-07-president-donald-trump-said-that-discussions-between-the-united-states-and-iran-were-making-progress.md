@@ -9,7 +9,7 @@ excerpt: On June 7, 2026, U.S. President Donald Trump said that discussions
   appeared to be moving closer to an agreement. The development was viewed
   positively by financial markets, with traders closely monitoring its potential
   impact on gold, Bitcoin, and other global assets.
-featured: false
+featured: true
 premium: false
 ---
 <h1>Trump Says U.S.-Iran Talks Are Progressing, Markets Watch Gold and Bitcoin Closely</h1>
