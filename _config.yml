@@ -1,22 +1,18 @@
 title: "Edge Aurum"
 tagline: "Intelligence Beyond the Charts"
 description: "Geopolitical intelligence decoded for Gold, Forex & Bitcoin traders. Daily news, deep analysis, and premium education."
-
 url: "https://edgeaurum.com"
 baseurl: ""
 lang: en
 timezone: UTC
-
 email: "hello@edgeaurum.com"
 
 # Monetization
 gumroad_product_url: "https://gumroad.com/l/YOUR_PRODUCT_ID"
 convertkit_form_id: "YOUR_FORM_ID"
 convertkit_uid: "YOUR_UID"
-
 telegram_url: "https://t.me/edgeaurum"
 twitter_url: "https://x.com/edgeaurum"
-
 google_analytics: "G-NFHJJJKC2V"
 
 # Build
@@ -24,7 +20,6 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:slug/
 future: true
-
 kramdown:
   input: GFM
   syntax_highlighter: rouge
@@ -34,7 +29,6 @@ collections:
   news:
     output: true
     permalink: /news/:slug/
-
   analysis:
     output: true
     permalink: /analysis/:slug/
@@ -47,7 +41,6 @@ defaults:
     values:
       layout: post
       category: news
-
   - scope:
       path: ""
       type: analysis
@@ -83,7 +76,6 @@ feed:
 twitter:
   username: edgeaurum
   card: summary_large_image
-
 social:
   name: Edge Aurum
   links:
@@ -94,12 +86,15 @@ social:
 last-modified-at:
   date-format: "%Y-%m-%d %H:%M:%S"
 
-# Exclude
+# Exclude — admin is raw HTML, must not be processed by Jekyll
 exclude:
   - README.md
+  - Gemfile
+  - Gemfile.lock
   - node_modules
   - vendor
   - vendor/bundle
   - vendor/cache
   - vendor/gems
   - vendor/ruby
+  - admin/config.yml
