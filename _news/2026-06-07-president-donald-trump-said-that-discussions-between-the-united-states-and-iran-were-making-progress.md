@@ -1,7 +1,7 @@
 ---
 title: President Donald Trump said that discussions between the United States
   and Iran were making progress
-date: 2026-06-07T22:26:00.000+05:00
+date: 2026-06-08T14:44:00.000+05:00
 alert_level: high
 category: macro
 excerpt: On June 7, 2026, U.S. President Donald Trump said that discussions
@@ -9,7 +9,7 @@ excerpt: On June 7, 2026, U.S. President Donald Trump said that discussions
   appeared to be moving closer to an agreement. The development was viewed
   positively by financial markets, with traders closely monitoring its potential
   impact on gold, Bitcoin, and other global assets.
-featured: true
+featured: false
 premium: false
 ---
 <h1>Trump Says U.S.-Iran Talks Are Progressing, Markets Watch Gold and Bitcoin Closely</h1>
