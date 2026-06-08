@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.3"
+gem "jekyll-sass-converter", "~> 2.2"
 gem "jekyll-feed", "~> 0.15"
 gem "jekyll-seo-tag", "~> 2.8"
 gem "jekyll-sitemap", "~> 1.4"
