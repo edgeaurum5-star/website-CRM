@@ -1,11 +1,10 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.3"
-gem "jekyll-sass-converter", "~> 2.2"
 gem "jekyll-feed", "~> 0.15"
 gem "jekyll-seo-tag", "~> 2.8"
 gem "jekyll-sitemap", "~> 1.4"
 gem "jekyll-paginate-v2", "~> 3.0"
 gem "jekyll-redirect-from", "~> 0.16"
-gem "jekyll-last-modified-at"
+gem "jekyll-last-modified-at", "~> 1.3"
 gem "webrick", "~> 1.8"
