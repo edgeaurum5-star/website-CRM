@@ -1,9 +1,11 @@
 # ═══════════════════════════════════════════════════════
 #  EDGE AURUM — Decap CMS Configuration
+#  GitHub backend — works on Cloudflare Pages, any host
 # ═══════════════════════════════════════════════════════
 
 backend:
-  name:   git-gateway
+  name:   github
+  repo:   edgeaurum5-star/website-CRM
   branch: main
   commit_messages:
     create:  "New post: {{collection}} — {{slug}}"
@@ -15,7 +17,6 @@ media_folder:  "assets/images"
 public_folder: "/assets/images"
 
 show_preview_links: true
-# editorial_workflow REMOVED — posts now publish instantly on Save
 
 collections:
 
