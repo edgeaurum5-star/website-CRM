@@ -12,10 +12,10 @@ impacts:
     direction: up
   - asset: Oil ↓
     direction: down
-excerpt: U.S. President Donald Trump said on June 7, 2026 that negotiations
-  between the United States and Iran are continuing to make progress, adding
-  that both sides appear to be moving closer to a potential agreement. Trump
-  expressed optimism that a deal could eventually be reached.
+excerpt: U.S. President Donald Trump said on June 7, 2026 that negotiations with
+  Iran are making progress and both sides appear to be moving closer to a
+  potential agreement. The development is being closely watched by traders in
+  gold, Bitcoin, and energy markets.
 featured: false
 premium: false
 ---
