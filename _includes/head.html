@@ -35,14 +35,13 @@
   }
 </script>
 
-<!-- Google Analytics (add your GA4 ID to _config.yml) -->
-{% if site.google_analytics %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQRFW0QHPH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics }}');
+
+  gtag('config', 'G-JQRFW0QHPH');
 </script>
-{% endif %}
 {% seo %}
