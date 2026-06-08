@@ -17,12 +17,13 @@ convertkit_uid:       "YOUR_UID"
 telegram_url:         "https://t.me/edgeaurum"
 twitter_url:          "https://twitter.com/edgeaurum"
 twelve_data_key:      "YOUR_TWELVE_DATA_KEY"
-google_analytics:     ""
+google_analytics:     "G-NFHJJJKC2V"
 
 # ── BUILD ──
 markdown:    kramdown
 highlighter: rouge
 permalink:   /:categories/:slug/
+future:      true
 
 kramdown:
   input: GFM
