@@ -22,3 +22,7 @@ seo_description: "Trump called for an immediate ceasefire and said peace talks w
 U.S. President Donald Trump called for an immediate halt to fighting, urging both sides to stop shooting and allow diplomatic efforts to continue. The statement was made through social media and was interpreted by markets as a signal that negotiations remain active despite recent hostilities.
 
 Market participants are closely watching the situation for any concrete developments, including confirmation of a ceasefire agreement and additional statements from involved governments. Gold, oil, Bitcoin, and broader currency markets may all see movement as the situation unfolds.
+
+
+
+Hussain Zaidi Alwasti
