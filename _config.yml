@@ -98,3 +98,19 @@ exclude:
   - vendor/gems
   - vendor/ruby
   - admin/config.yml
+# ── INCLUDE ──
+include:
+  - admin
+
+# ── EXCLUDE ──
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby
+  
