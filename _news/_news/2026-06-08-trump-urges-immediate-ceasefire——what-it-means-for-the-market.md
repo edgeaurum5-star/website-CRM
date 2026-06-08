@@ -1,35 +1,23 @@
 ---
-
-title: Trump Urges Immediate Ceasefire as Peace Proceedings Continue
-date: 2026-06-08T18:30:00.000+05:00
+title: "Trump Urges Immediate Ceasefire as Peace Proceedings Continue"
+date: 2026-06-08 18:30:00 +0500
 alert_level: medium
 category: geopolitics
-
 impacts:
-
-* asset: Gold ↓
-  direction: down
-
-* asset: BTC ↑
-  direction: up
-
-* asset: Oil ↓
-  direction: down
-
-* asset: USD ↓
-  direction: down
-
-excerpt: U.S. President Donald Trump called on both sides to immediately stop
-"shooting" and said peace proceedings would continue. Markets are monitoring
-the situation closely as any diplomatic progress could influence gold,
-Bitcoin, oil, and broader risk sentiment.
-
+  - asset: Gold
+    direction: down
+  - asset: BTC
+    direction: up
+  - asset: Oil
+    direction: down
+  - asset: USD
+    direction: down
+excerpt: "U.S. President Donald Trump called on both sides to immediately stop \"shooting\" and said peace proceedings would continue. Markets are monitoring the situation closely as any diplomatic progress could influence gold, Bitcoin, oil, and broader risk sentiment."
 featured: true
 premium: false
-seo_description: Trump called for an immediate ceasefire and said peace talks
-would continue. Traders are watching potential impacts on gold, Bitcoin,
-oil, and global markets.
-------------------------
+image:
+seo_description: "Trump called for an immediate ceasefire and said peace talks would continue. Traders are watching potential impacts on gold, Bitcoin, oil, and global markets."
+---
 
 U.S. President Donald Trump called for an immediate halt to fighting, urging both sides to stop "shooting" and allow diplomatic efforts to continue.
 
@@ -67,10 +55,10 @@ Any progress toward de-escalation could ease concerns about supply disruptions a
 
 Market participants will be focused on:
 
-* Confirmation of a ceasefire agreement
-* Additional statements from involved governments
-* Reactions from global leaders and institutions
-* Potential shifts in gold, oil, and cryptocurrency markets
+- Confirmation of a ceasefire agreement
+- Additional statements from involved governments
+- Reactions from global leaders and institutions
+- Potential shifts in gold, oil, and cryptocurrency markets
 
 Until concrete agreements are announced, traders are expected to remain cautious while monitoring further developments.
 
