@@ -1,60 +1,70 @@
-# ═══════════════════════════════════
-#  EDGE AURUM — Jekyll Configuration
-# ═══════════════════════════════════
-
-title:       "Edge Aurum"
-tagline:     "Intelligence Beyond the Charts"
+title: "Edge Aurum"
+tagline: "Intelligence Beyond the Charts"
 description: "Geopolitical intelligence decoded for Gold, Forex & Bitcoin traders. Daily news, deep analysis, and premium education."
-url:         "https://edgeaurum.com"
-baseurl:     ""
-email:       "hello@edgeaurum.com"
-lang:        "en"
 
-# ── MONETIZATION (fill these in) ──
-gumroad_product_url:  "https://gumroad.com/l/YOUR_PRODUCT_ID"
-convertkit_form_id:   "YOUR_FORM_ID"
-convertkit_uid:       "YOUR_UID"
-telegram_url:         "https://t.me/edgeaurum"
-twitter_url:          "https://twitter.com/edgeaurum"
-twelve_data_key:      "YOUR_TWELVE_DATA_KEY"
-google_analytics:     "G-NFHJJJKC2V"
+url: "https://edgeaurum.com"
+baseurl: ""
+lang: en
+timezone: UTC
 
-# ── BUILD ──
-markdown:    kramdown
+email: "hello@edgeaurum.com"
+
+# Monetization
+gumroad_product_url: "https://gumroad.com/l/YOUR_PRODUCT_ID"
+convertkit_form_id: "YOUR_FORM_ID"
+convertkit_uid: "YOUR_UID"
+
+telegram_url: "https://t.me/edgeaurum"
+twitter_url: "https://x.com/edgeaurum"
+
+google_analytics: "G-NFHJJJKC2V"
+
+# Build
+markdown: kramdown
 highlighter: rouge
-permalink:   /:categories/:slug/
-future:      true
+permalink: /:categories/:slug/
+future: true
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# ── COLLECTIONS ──
+# Collections
 collections:
   news:
-    output:    true
+    output: true
     permalink: /news/:slug/
+
   analysis:
-    output:    true
+    output: true
     permalink: /analysis/:slug/
 
-# ── DEFAULTS ──
+# Defaults
 defaults:
-  - scope: { path: "", type: "news" }
-    values: { layout: "post", category: "news" }
-  - scope: { path: "", type: "analysis" }
-    values: { layout: "post", category: "analysis" }
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: post
+      category: news
 
-# ── PAGINATION ──
+  - scope:
+      path: ""
+      type: analysis
+    values:
+      layout: post
+      category: analysis
+
+# Pagination v2
 pagination:
-  enabled:      true
-  per_page:     12
-  permalink:    "/page/:num/"
-  title:        ":title - Page :num"
-  sort_field:   "date"
+  enabled: true
+  per_page: 12
+  permalink: "/page/:num/"
+  title: ":title - Page :num"
+  sort_field: date
   sort_reverse: true
 
-# ── PLUGINS ──
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -63,20 +73,33 @@ plugins:
   - jekyll-redirect-from
   - jekyll-last-modified-at
 
-# ── SEO ──
+# Feed
+feed:
+  collections:
+    news:
+      path: feed.xml
+
+# SEO
 twitter:
   username: edgeaurum
-  card:     summary_large_image
+  card: summary_large_image
 
 social:
-  name:  "Edge Aurum"
+  name: Edge Aurum
   links:
-    - https://twitter.com/edgeaurum
+    - https://x.com/edgeaurum
+    - https://t.me/edgeaurum
 
-# ── EXCLUDE ──
+# Last Modified At
+last-modified-at:
+  date-format: "%Y-%m-%d %H:%M:%S"
+
+# Exclude
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - README.md
   - node_modules
   - vendor
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby
