@@ -13,6 +13,7 @@ convertkit_form_id: "YOUR_FORM_ID"
 convertkit_uid: "YOUR_UID"
 telegram_url: "https://t.me/edgeaurum"
 twitter_url: "https://x.com/edgeaurum"
+twelve_data_key: "f71ae3c3a93f4ebc989ddbd51ab23c03"
 google_analytics: "G-NFHJJJKC2V"
 
 # Build
@@ -86,23 +87,11 @@ social:
 last-modified-at:
   date-format: "%Y-%m-%d %H:%M:%S"
 
-# Exclude — admin is raw HTML, must not be processed by Jekyll
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - vendor/bundle
-  - vendor/cache
-  - vendor/gems
-  - vendor/ruby
-  - admin/config.yml
-# ── INCLUDE ──
+# Include admin folder as-is
 include:
   - admin
 
-# ── EXCLUDE ──
+# Exclude
 exclude:
   - README.md
   - Gemfile
@@ -113,4 +102,4 @@ exclude:
   - vendor/cache
   - vendor/gems
   - vendor/ruby
-  
+  - admin/config.yml    
