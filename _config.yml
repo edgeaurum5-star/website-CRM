@@ -12,6 +12,8 @@ gumroad_product_url: "https://gumroad.com/l/YOUR_PRODUCT_ID"
 convertkit_form_id: "YOUR_FORM_ID"
 convertkit_uid: "YOUR_UID"
 telegram_url: "https://t.me/edgeaurum"
+whatsapp_url: "https://whatsapp.com/channel/YOUR_CHANNEL_ID"
+facebook_url: "https://facebook.com/edgeaurum"
 twitter_url: "https://x.com/edgeaurum"
 twelve_data_key: "f71ae3c3a93f4ebc989ddbd51ab23c03"
 google_analytics: "G-NFHJJJKC2V"
@@ -87,7 +89,7 @@ social:
 last-modified-at:
   date-format: "%Y-%m-%d %H:%M:%S"
 
-# Include admin folder as-is
+# Include admin folder so CMS config.yml is served
 include:
   - admin
 
@@ -102,4 +104,3 @@ exclude:
   - vendor/cache
   - vendor/gems
   - vendor/ruby
-  - admin/config.yml    
