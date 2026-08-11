@@ -112,11 +112,34 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.2;color:var(--t1);margin-bottom:14px;">
         Mastering <em style="color:var(--gold);">Macro Trading</em>
       </h2>
-      <p style="font-size:13px;line-height:1.8;color:var(--t2);font-weight:300;max-width:480px;margin-bottom:24px;">
+      <p style="font-size:13px;line-height:1.8;color:var(--t2);font-weight:300;max-width:480px;margin-bottom:28px;">
         Learn to trade Gold, Forex &amp; Bitcoin using geopolitical intelligence — not lagging indicators. The only course that starts with world events, not charts.
       </p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="{{ s.gumroad_url | default: '/academy/' }}" target="_blank" rel="noopener"><button class="btn-gold">Enroll — {{ s.course_price | default: '$297' }} →</button></a>
+
+      <!-- SESSION TYPE TABS -->
+      <div class="session-tabs">
+        <input type="radio" name="session-type" id="tab-1on1" class="tab-radio" checked>
+        <input type="radio" name="session-type" id="tab-group" class="tab-radio">
+
+        <div class="tab-buttons">
+          <label for="tab-1on1" class="tab-btn">1:1 Session</label>
+          <label for="tab-group" class="tab-btn">Group Session</label>
+        </div>
+
+        <div class="tab-panel panel-1on1">
+          <div class="session-price">$103</div>
+          <p class="session-desc">Personalized one-on-one coaching — work directly through your positioning, risk framework, and live trade questions with focused attention.</p>
+          <a href="{{ s.gumroad_url | default: '/academy/' }}" target="_blank" rel="noopener"><button class="btn-gold">Book 1:1 Session — $103 →</button></a>
+        </div>
+
+        <div class="tab-panel panel-group">
+          <div class="session-price">Free</div>
+          <p class="session-desc">Join the group cohort session — learn alongside other traders, live Q&amp;A, and shared market breakdowns. No cost to join.</p>
+          <a href="{{ s.telegram_url | default: '/academy/' }}" target="_blank" rel="noopener"><button class="btn-outline">Join Group Session — Free →</button></a>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;">
         <a href="/academy/"><button class="btn-outline">Course Details</button></a>
       </div>
     </div>
@@ -191,6 +214,31 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 .analysis-preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .ana-preview-card{display:block;background:var(--card);border:1px solid var(--border);padding:24px;text-decoration:none;transition:all 0.25s;}
 .ana-preview-card:hover{border-color:var(--border-g);transform:translateY(-2px);}
+
+/* SESSION TYPE TABS */
+.session-tabs{margin-top:4px;}
+.tab-radio{position:absolute;opacity:0;pointer-events:none;}
+.tab-buttons{display:flex;gap:8px;margin-bottom:22px;}
+.tab-btn{
+  padding:10px 24px;border:1px solid var(--border);color:var(--t2);
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;
+  transition:all 0.2s;user-select:none;
+}
+.tab-btn:hover{border-color:var(--gold);color:var(--gold);}
+#tab-1on1:checked ~ .tab-buttons label[for="tab-1on1"],
+#tab-group:checked ~ .tab-buttons label[for="tab-group"]{
+  background:var(--gold);color:#0D1117;border-color:var(--gold);
+}
+.tab-panel{display:none;}
+#tab-1on1:checked ~ .panel-1on1{display:block;}
+#tab-group:checked ~ .panel-group{display:block;}
+.session-price{
+  font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:12px;
+}
+.session-desc{font-size:13px;line-height:1.75;color:var(--t2);font-weight:300;max-width:420px;margin-bottom:20px;}
+
 @media(max-width:960px){
   .hero-section{padding:52px 20px;min-height:auto;}
   .asset-grid,.news-feed-grid,.analysis-preview-grid{grid-template-columns:1fr;}
