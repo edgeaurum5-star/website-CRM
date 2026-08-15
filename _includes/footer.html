@@ -1,7 +1,6 @@
 {% assign s = site.data.settings %}
 <footer>
   <div class="footer-top">
-
     <!-- BRAND -->
     <div class="footer-brand">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
@@ -14,7 +13,7 @@
       <p class="fb-desc">Geopolitical intelligence decoded for Gold, Forex &amp; Bitcoin traders. Daily news, deep analysis, and premium education.</p>
       <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
         <a href="https://twitter.com/edgeaurum" target="_blank" rel="noopener" class="social-link">Twitter / X</a>
-        {% if s.telegram_url %}<a href="{{ s.telegram_url }}" target="_blank" rel="noopener" class="social-link">Telegram</a>{% endif %}
+        <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener" class="social-link">WhatsApp</a>
         <a href="/academy/" class="social-link" style="color:var(--gold)!important;">Academy →</a>
       </div>
     </div>
@@ -40,7 +39,6 @@
       </form>
       <p id="fOk" style="display:none;color:var(--green);font-size:11px;margin-top:8px;letter-spacing:0.06em;">✓ Subscribed! Check your inbox.</p>
     </div>
-
   </div>
 
   <!-- MONETIZATION ROW -->
@@ -50,13 +48,11 @@
       <span style="font-size:13px;font-weight:600;color:var(--t1);">Mastering Macro Trading — {{ s.course_price | default: '$297' }}</span>
       <span style="font-size:10px;color:var(--t3);">{{ s.cohort_name | default: 'Enrolling now' }} · Enroll →</span>
     </a>
-    {% if s.telegram_url %}
-    <a href="{{ s.telegram_url }}" target="_blank" rel="noopener" class="footer-product-link">
-      <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cyan);">Free Community</span>
-      <span style="font-size:13px;font-weight:600;color:var(--t1);">Telegram Channel</span>
-      <span style="font-size:10px;color:var(--t3);">Daily signals &amp; discussion · Join free →</span>
+    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener" class="footer-product-link">
+      <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cyan);">Free Group Session</span>
+      <span style="font-size:13px;font-weight:600;color:var(--t1);">Join Our Free Group Session</span>
+      <span style="font-size:10px;color:var(--t3);">Live discussion via WhatsApp · Join free →</span>
     </a>
-    {% endif %}
   </div>
 
   <div class="footer-bottom">
