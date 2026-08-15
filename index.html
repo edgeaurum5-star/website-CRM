@@ -22,13 +22,11 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
       <a href="/news/"><button class="btn-gold">Today's Intelligence Brief</button></a>
       <a href="/academy/"><button class="btn-outline">Explore Academy →</button></a>
     </div>
-    {% if s.telegram_url %}
     <div class="hero-telegram">
-      <a href="{{ s.telegram_url }}" target="_blank" rel="noopener">
-        <span style="color:var(--cyan);">📱 Join our free Telegram channel →</span>
+      <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener">
+        <span style="color:var(--cyan);">💬 Join our free WhatsApp community →</span>
       </a>
     </div>
-    {% endif %}
   </div>
 </section>
 
@@ -118,24 +116,25 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 
       <!-- SESSION TYPE TABS -->
       <div class="session-tabs">
-        <input type="radio" name="session-type" id="tab-1on1" class="tab-radio" checked>
-        <input type="radio" name="session-type" id="tab-group" class="tab-radio">
+        <input type="radio" name="session-type" id="tab-group" class="tab-radio" checked>
+        <input type="radio" name="session-type" id="tab-1on1" class="tab-radio">
 
         <div class="tab-buttons">
-          <label for="tab-1on1" class="tab-btn">1:1 Session</label>
-          <label for="tab-group" class="tab-btn">Group Session</label>
+          <label for="tab-group" class="tab-btn tab-btn-primary">Group Session</label>
+          <label for="tab-1on1" class="tab-btn tab-btn-secondary">1:1 Session</label>
+        </div>
+
+        <div class="tab-panel panel-group">
+          <div class="session-price session-price-free">Free</div>
+          <p class="session-desc">This is the easiest way to see what Edge Aurum is about with zero commitment. You'll sit in on a live session alongside other traders, watch how we break down what's actually moving in the markets that week, and get a real feel for how geopolitical thinking changes the way you read a chart. No pressure, no sales pitch — just come, listen, and ask questions if you have them.</p>
+          <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener"><button class="btn-gold">Join Free Group Session →</button></a>
+          <p class="session-community">Prefer to chat first? <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener" style="color:var(--cyan);">Join our WhatsApp community →</a></p>
         </div>
 
         <div class="tab-panel panel-1on1">
           <div class="session-price">$103</div>
-          <p class="session-desc">Personalized one-on-one coaching — work directly through your positioning, risk framework, and live trade questions with focused attention.</p>
-          <a href="{{ s.gumroad_url | default: '/academy/' }}" target="_blank" rel="noopener"><button class="btn-gold">Book 1:1 Session — $103 →</button></a>
-        </div>
-
-        <div class="tab-panel panel-group">
-          <div class="session-price">Free</div>
-          <p class="session-desc">Join the group cohort session — learn alongside other traders, live Q&amp;A, and shared market breakdowns. No cost to join.</p>
-          <a href="{{ s.telegram_url | default: '/academy/' }}" target="_blank" rel="noopener"><button class="btn-outline">Join Group Session — Free →</button></a>
+          <p class="session-desc">If you'd rather go deeper on your own situation instead of a group setting, this is that. It's just you and one of our team, working through your actual positions, your risk tolerance, and whatever's been tripping you up — so the conversation is shaped entirely around where you're at, not a fixed lesson plan.</p>
+          <a href="{{ s.gumroad_url | default: '/academy/' }}" target="_blank" rel="noopener"><button class="btn-outline">Book 1:1 Session — $103 →</button></a>
         </div>
       </div>
 
@@ -218,26 +217,31 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 /* SESSION TYPE TABS */
 .session-tabs{margin-top:4px;}
 .tab-radio{position:absolute;opacity:0;pointer-events:none;}
-.tab-buttons{display:flex;gap:8px;margin-bottom:22px;}
+.tab-buttons{display:flex;align-items:center;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
 .tab-btn{
-  padding:10px 24px;border:1px solid var(--border);color:var(--t2);
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+  border:1px solid var(--border);color:var(--t2);
+  font-family:'Inter',sans-serif;font-weight:600;
   letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;
   transition:all 0.2s;user-select:none;
 }
+.tab-btn-primary{padding:16px 34px;font-size:13px;border-width:1.5px;}
+.tab-btn-secondary{padding:9px 22px;font-size:10px;color:var(--t3);}
 .tab-btn:hover{border-color:var(--gold);color:var(--gold);}
-#tab-1on1:checked ~ .tab-buttons label[for="tab-1on1"],
-#tab-group:checked ~ .tab-buttons label[for="tab-group"]{
+#tab-group:checked ~ .tab-buttons label[for="tab-group"],
+#tab-1on1:checked ~ .tab-buttons label[for="tab-1on1"]{
   background:var(--gold);color:#0D1117;border-color:var(--gold);
 }
 .tab-panel{display:none;}
-#tab-1on1:checked ~ .panel-1on1{display:block;}
 #tab-group:checked ~ .panel-group{display:block;}
+#tab-1on1:checked ~ .panel-1on1{display:block;}
 .session-price{
   font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;
   color:var(--gold);line-height:1;margin-bottom:12px;
 }
-.session-desc{font-size:13px;line-height:1.75;color:var(--t2);font-weight:300;max-width:420px;margin-bottom:20px;}
+.session-price-free{font-size:46px;font-weight:800;}
+.session-desc{font-size:13px;line-height:1.8;color:var(--t2);font-weight:300;max-width:440px;margin-bottom:20px;}
+.session-community{font-size:11.5px;color:var(--t3);margin-top:14px;letter-spacing:0.03em;}
+.session-community a{text-decoration:none;}
 
 @media(max-width:960px){
   .hero-section{padding:52px 20px;min-height:auto;}
