@@ -25,6 +25,11 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
     <a href="#curriculum"><button class="btn-outline">See Curriculum ↓</button></a>
     <span style="font-size:11px;letter-spacing:0.1em;color:var(--t4);">→ Enrollment closes June 10, 2026</span>
   </div>
+  <div style="margin-top:20px;">
+    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+      <span style="color:var(--cyan);font-size:12px;letter-spacing:0.06em;">💬 Not ready to enroll? Join our free WhatsApp community first →</span>
+    </a>
+  </div>
 </section>
 
 <!-- PROBLEM / SOLUTION -->
@@ -92,7 +97,7 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
         <div style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">One-Time Enrollment</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--gold);line-height:1;">{{ s.course_price | default:'$297' }}</div>
         <div style="font-size:12px;color:var(--t3);margin-top:4px;letter-spacing:0.1em;margin-bottom:22px;">Lifetime access · No subscription</div>
-        {% assign features = "All 8 course modules + video lessons|3 live group sessions with Q&A|Lifetime access + all future updates|Private student Telegram community|30 days of Premium Daily Briefings|Geopolitical Trade Journal templates|Certificate of completion" | split:"|" %}
+        {% assign features = "All 8 course modules + video lessons|3 live group sessions with Q&A|Lifetime access + all future updates|Private student WhatsApp community|30 days of Premium Daily Briefings|Geopolitical Trade Journal templates|Certificate of completion" | split:"|" %}
         <ul style="list-style:none;margin-bottom:24px;">
           {% for feat in features %}
           <li style="font-size:12px;letter-spacing:0.04em;color:var(--t2);padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:12px;flex-shrink:0;">✓</span>{{ feat }}</li>
@@ -107,6 +112,16 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
 
   </div>
 </div>
+
+<!-- WHATSAPP COMMUNITY BANNER -->
+<section style="padding:48px 40px;text-align:center;background:linear-gradient(135deg,var(--bg2),rgba(0,200,224,0.05));border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:1;">
+  <div style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px;">Free Community</div>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:600;color:var(--t1);margin-bottom:14px;">Not ready to enroll? Start here instead.</h3>
+  <p style="font-size:13px;color:var(--t2);max-width:480px;margin:0 auto 24px;line-height:1.8;font-weight:300;">
+    Join traders already discussing daily market moves, ask questions, and get a feel for how we think before you commit to anything. It's free, always open, and the best way to see if this approach is right for you.
+  </p>
+  <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener"><button class="btn-outline">Join WhatsApp Community →</button></a>
+</section>
 
 <!-- TESTIMONIALS -->
 <section style="padding:64px 40px;border-top:1px solid var(--border);position:relative;z-index:1;">
@@ -128,7 +143,7 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
 <section style="padding:64px 40px;background:var(--bg2);border-top:1px solid var(--border);position:relative;z-index:1;">
   <div class="sec-label">Frequently Asked</div>
   <div style="max-width:700px;">
-    {% assign faqs = "Do I need trading experience to join?|No. The course is designed for all levels. Beginners learn the foundational framework; experienced traders add a geopolitical layer to their existing analysis. Early modules build foundational understanding before advancing to live trade execution.,What markets does the course cover?|Gold (XAU/USD), Bitcoin (BTC/USD), major Forex pairs (EUR/USD, USD/JPY, GBP/USD, AUD/USD), the US Dollar Index (DXY), and Oil (WTI) as a secondary indicator for Gold and Forex positioning.,Is this live or self-paced?|Both. Core modules are pre-recorded for self-paced study. Each cohort includes 3 live group sessions with Q&A where we review current events and discuss active trade setups in real time.,How long do I have access?|Lifetime access. Once enrolled you own the course forever including all future updates and case studies at no extra cost.,Do you accept crypto payment?|Yes. We accept credit/debit cards, PayPal, and USDT/BTC upon request. Contact us before enrolling to arrange crypto payment." | split:"," %}
+    {% assign faqs = "Do I need trading experience to join?|No. The course is designed for all levels. Beginners learn the foundational framework; experienced traders add a geopolitical layer to their existing analysis. Early modules build foundational understanding before advancing to live trade execution.,What markets does the course cover?|Gold (XAU/USD), Bitcoin (BTC/USD), major Forex pairs (EUR/USD, USD/JPY, GBP/USD, AUD/USD), the US Dollar Index (DXY), and Oil (WTI) as a secondary indicator for Gold and Forex positioning.,Is this live or self-paced?|Both. Core modules are pre-recorded for self-paced study. Each cohort includes 3 live group sessions with Q&A where we review current events and discuss active trade setups in real time.,How long do I have access?|Lifetime access. Once enrolled you own the course forever including all future updates and case studies at no extra cost.,Do you accept crypto payment?|Yes. We accept credit/debit cards, PayPal, and USDT/BTC upon request. Contact us before enrolling to arrange crypto payment.,Is there a free way to try this first?|Yes — join our free group sessions or our WhatsApp community to see how we approach the markets before enrolling in the full course. No obligation either way." | split:"," %}
     {% for faq in faqs %}
       {% assign fparts = faq | split:"|" %}
       {% assign fi = forloop.index %}
@@ -149,6 +164,7 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
   <p style="font-size:14px;color:var(--t2);max-width:480px;margin:0 auto 28px;line-height:1.75;font-weight:300;">{{ s.cohort_name | default:'June 2026 Cohort' }} · Only {{ s.spots_left | default:'14' }} spots remaining · Enrollment closes June 10, 2026</p>
   <a href="{{ s.gumroad_url | default:'#' }}" target="_blank" rel="noopener"><button class="btn-gold" style="font-size:12px;padding:16px 44px;">Enroll Now — {{ s.course_price | default:'$297' }} →</button></a>
   <p style="font-size:11px;color:var(--t4);margin-top:14px;letter-spacing:0.08em;">7-day money-back guarantee · Lifetime access · Not financial advice</p>
+  <p style="font-size:11px;color:var(--t3);margin-top:10px;">Or start free — <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Ett352AmXq5Dpz7vxMDhZJ' }}" target="_blank" rel="noopener" style="color:var(--cyan);">join our WhatsApp community →</a></p>
 </section>
 
 <style>
@@ -184,6 +200,7 @@ function toggleFaq(n) {
   a.style.display = open ? 'none' : 'block';
   i.style.transform = open ? 'rotate(0deg)' : 'rotate(45deg)';
 }
+</script>
 
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
