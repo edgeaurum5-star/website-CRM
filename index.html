@@ -23,7 +23,7 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
       <a href="/academy/"><button class="btn-outline">Explore Academy →</button></a>
     </div>
     <div class="hero-telegram">
-      <a href="{{ s.whatsapp_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
+      <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
         <span style="color:var(--cyan);">💬 Join our free Telegram community →</span>
       </a>
     </div>
@@ -32,6 +32,26 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 
 <!-- EMAIL SUBSCRIPTION -->
 {% include subscribe-bar.html %}
+
+<!-- TELEGRAM COMMUNITY BANNER -->
+<section class="section telegram-banner-section">
+  <div class="telegram-banner-inner">
+    <div class="telegram-banner-badge">
+      <span class="pulse"></span>
+      <span>Community · Live</span>
+    </div>
+    <h2 class="telegram-banner-title">Join Free Telegram Learning Community</h2>
+    <div class="telegram-banner-points">
+      <span class="tb-point tb-point-gold">Free</span>
+      <span class="tb-point tb-point-cyan">Use VPN for Telegram</span>
+      <span class="tb-point tb-point-gold">Session Links Shared Here + News Feed</span>
+    </div>
+    <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
+      <button class="btn-gold telegram-banner-btn">💬 Join Telegram Community →</button>
+    </a>
+    <p class="telegram-banner-note">If Telegram doesn't open or connect in your region, use a VPN — all session links, alerts, and the live news feed are posted there first.</p>
+  </div>
+</section>
 
 <!-- LIVE MARKET DASHBOARD -->
 <section class="section">
@@ -212,6 +232,47 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 .ana-preview-card{display:block;background:var(--card);border:1px solid var(--border);padding:24px;text-decoration:none;transition:all 0.25s;}
 .ana-preview-card:hover{border-color:var(--border-g);transform:translateY(-2px);}
 
+/* TELEGRAM BANNER */
+.telegram-banner-section{
+  border-top:1px solid var(--border-g);
+  border-bottom:1px solid var(--border-g);
+  background:linear-gradient(135deg,rgba(0,200,224,0.06),rgba(212,168,67,0.06));
+  text-align:center;
+  padding:56px 20px;
+}
+.telegram-banner-inner{max-width:720px;margin:0 auto;}
+.telegram-banner-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:18px;
+}
+.telegram-banner-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(24px,3.6vw,38px);
+  font-weight:800;
+  line-height:1.25;
+  color:var(--t1);
+  margin-bottom:22px;
+}
+.telegram-banner-points{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:28px;
+}
+.tb-point{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:13px;
+  letter-spacing:0.02em;
+  padding:10px 18px;
+  border-radius:2px;
+  border:1.5px solid;
+}
+.tb-point-gold{color:var(--gold);border-color:var(--gold);background:rgba(212,168,67,0.08);}
+.tb-point-cyan{color:var(--cyan);border-color:var(--cyan);background:rgba(0,200,224,0.08);}
+.telegram-banner-btn{font-size:14px;padding:16px 36px;}
+.telegram-banner-note{
+  margin-top:18px;font-size:12px;line-height:1.7;color:var(--t3);font-weight:300;max-width:520px;margin-left:auto;margin-right:auto;
+}
+
 /* SESSION TYPE TABS */
 .session-tabs{margin-top:4px;}
 .tab-radio{position:absolute;opacity:0;pointer-events:none;}
@@ -249,6 +310,7 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 }
 @media(max-width:600px){
   .news-feed-grid{grid-template-columns:1fr;}
+  .tb-point{font-size:11.5px;padding:9px 14px;}
 }
 </style>
 
