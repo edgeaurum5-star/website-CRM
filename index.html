@@ -175,29 +175,6 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
   </div>
 </section>
 
-<!-- LATEST ANALYSIS -->
-<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);">
-  <div class="sec-label">Featured Analysis</div>
-  <div class="analysis-preview-grid">
-    {% assign featured_ana = site.analysis | sort: "date" | reverse %}
-    {% for post in featured_ana limit:3 %}
-    <a href="{{ post.url }}" class="ana-preview-card">
-      <div style="display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap;">
-        {% for tag in post.tags limit:2 %}<span class="tag tag-x" style="margin:0;font-size:8px;">{{ tag }}</span>{% endfor %}
-        {% if post.premium %}<span class="tag tag-g" style="margin:0;font-size:8px;">Premium</span>
-        {% else %}<span style="background:rgba(61,214,140,0.1);color:var(--green);font-size:8px;letter-spacing:0.28em;text-transform:uppercase;padding:3px 8px;">Free</span>{% endif %}
-      </div>
-      <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;line-height:1.4;color:var(--t1);margin-bottom:8px;">{{ post.title }}</h3>
-      <p style="font-size:12px;line-height:1.7;color:var(--t2);font-weight:300;">{{ post.excerpt | truncate:100 }}</p>
-      <div style="margin-top:14px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Read Analysis →</div>
-    </a>
-    {% else %}
-    <div class="card"><p style="color:var(--t3);font-size:13px;">Add analysis posts via /admin.</p></div>
-    {% endfor %}
-  </div>
-  <div style="margin-top:24px;text-align:center;"><a href="/analysis/"><button class="btn-outline">View All Analysis →</button></a></div>
-</section>
-
 <style>
 /* Homepage-specific styles */
 .hero-section{position:relative;z-index:1;min-height:calc(100vh - 120px);display:flex;align-items:center;padding:60px 40px;}
