@@ -26,6 +26,7 @@
     <a href="/markets/"  {% if page.url contains '/markets'  %}class="active"{% endif %}>Markets</a>
     <a href="/analysis/" {% if page.url contains '/analysis' %}class="active"{% endif %}>Analysis</a>
     <a href="/academy/"  {% if page.url contains '/academy'  %}class="active"{% endif %}>Academy</a>
+    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener" style="color:var(--cyan)!important;">Whatsapp ↗</a>
     <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener" style="color:var(--cyan)!important;">Telegram ↗</a>
     <a href="/academy/" class="nav-cta">Join Academy</a>
   </div>
