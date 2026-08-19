@@ -21,29 +21,60 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
     Free trading education that starts with geopolitics, not indicators. Learn why Gold, Forex, and Bitcoin move — and position before the herd reacts. No cost, no catch.
   </p>
   <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;align-items:center;">
-    <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener"><button class="btn-gold" style="font-size:11px;padding:15px 36px;">Join Free Telegram Community →</button></a>
+    <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener"><button class="btn-gold" style="font-size:11px;padding:15px 36px;">Join Free Community →</button></a>
     <a href="#one-on-one"><button class="btn-outline">Want 1:1 Coaching? ↓</button></a>
   </div>
 </section>
-<!-- WHATSAPP COMMUNITY BANNER -->
-<section class="section whatsapp-banner-section">
-  <div class="whatsapp-banner-inner">
-    <div class="whatsapp-banner-badge">
+
+<!-- COMMUNITY BANNER (TELEGRAM + WHATSAPP TABS) — #1 -->
+<section class="section community-banner-section">
+  <div class="community-banner-inner">
+    <div class="community-banner-badge">
       <span class="pulse"></span>
       <span>Community · Live</span>
     </div>
-    <h2 class="whatsapp-banner-title">Join Free WhatsApp Learning Community</h2>
-    <div class="whatsapp-banner-points">
-      <span class="tb-point tb-point-gold">Free</span>
-      <span class="tb-point tb-point-cyan">Use VPN for WhatsApp</span>
-      <span class="tb-point tb-point-gold">Session Links Shared Here + News Feed</span>
+    <h2 class="community-banner-title">Join Our Free Learning Community</h2>
+    <p class="community-banner-sub">Same sessions, same news feed, same alerts — join on whichever app you actually use.</p>
+
+    <div class="community-tabs">
+      <input type="radio" name="community-type-1" id="ctab-telegram-1" class="tab-radio" checked>
+      <input type="radio" name="community-type-1" id="ctab-whatsapp-1" class="tab-radio">
+
+      <div class="ctab-buttons">
+        <label for="ctab-telegram-1" class="ctab-btn ctab-btn-telegram">
+          Telegram
+          <span class="ctab-pin">Primary Channel</span>
+        </label>
+        <label for="ctab-whatsapp-1" class="ctab-btn ctab-btn-whatsapp">WhatsApp</label>
+      </div>
+
+      <div class="ctab-panel panel-telegram-1">
+        <div class="community-banner-points">
+          <span class="tb-point tb-point-gold">Free</span>
+          <span class="tb-point tb-point-cyan">Use VPN for Telegram</span>
+          <span class="tb-point tb-point-gold">Session Links + News Feed</span>
+        </div>
+        <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
+          <button class="btn-gold community-banner-btn">💬 Join Telegram Community →</button>
+        </a>
+        <p class="community-banner-note">Telegram is our permanent, primary channel — it's always active and the first place session links, alerts, and the live news feed get posted. If it doesn't open in your region, use a VPN.</p>
+      </div>
+
+      <div class="ctab-panel panel-whatsapp-1">
+        <div class="community-banner-points">
+          <span class="tb-point tb-point-gold">Free</span>
+          <span class="tb-point tb-point-cyan">Use VPN for WhatsApp</span>
+          <span class="tb-point tb-point-gold">Session Links + News Feed</span>
+        </div>
+        <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
+          <button class="btn-green community-banner-btn">💬 Join WhatsApp Community →</button>
+        </a>
+        <p class="community-banner-note">Prefer WhatsApp? This group mirrors everything shared on Telegram. Telegram remains the permanent home base if this group ever needs to be refreshed. If it doesn't open in your region, use a VPN.</p>
+      </div>
     </div>
-    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
-      <button class="btn-green whatsapp-banner-btn">💬 Join WhatsApp Community →</button>
-    </a>
-    <p class="whatsapp-banner-note">If WhatsApp doesn't open or connect in your region, use a VPN — all session links, alerts, and the live news feed are posted there first.</p>
   </div>
 </section>
+
 <!-- PROBLEM / SOLUTION -->
 <div style="display:grid;grid-template-columns:1fr 1fr;position:relative;z-index:1;">
   <div style="padding:52px 40px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);">
@@ -114,16 +145,43 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
   </div>
 </section>
 
-<!-- Telegram COMMUNITY BANNER -->
-<section style="padding:56px 40px;text-align:center;background:linear-gradient(135deg,var(--bg2),rgba(0,200,224,0.05));border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:1;">
-  <div style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px;">Free Community</div>
-  <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:600;color:var(--t1);margin-bottom:14px;">Everything starts here.</h3>
-  <p style="font-size:13px;color:var(--t2);max-width:480px;margin:0 auto 24px;line-height:1.8;font-weight:300;">
-    Join traders already discussing daily market moves, ask questions, and get a feel for how we think — completely free, no commitment, no upsell waiting on the other side.
-  </p>
-  <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
-  <button class="btn-gold" style="padding:15px 36px;">Join Telegram Channel →</button>
-</a>
+<!-- COMMUNITY BANNER (TELEGRAM + WHATSAPP TABS) — #2 -->
+<section class="section community-banner-section">
+  <div class="community-banner-inner">
+    <div class="community-banner-badge">
+      <span class="pulse"></span>
+      <span>Free Community</span>
+    </div>
+    <h2 class="community-banner-title">Everything starts here.</h2>
+    <p class="community-banner-sub">Join traders already discussing daily market moves, ask questions, and get a feel for how we think — completely free, no commitment, no upsell waiting on the other side.</p>
+
+    <div class="community-tabs">
+      <input type="radio" name="community-type-2" id="ctab-telegram-2" class="tab-radio" checked>
+      <input type="radio" name="community-type-2" id="ctab-whatsapp-2" class="tab-radio">
+
+      <div class="ctab-buttons">
+        <label for="ctab-telegram-2" class="ctab-btn ctab-btn-telegram">
+          Telegram
+          <span class="ctab-pin">Primary Channel</span>
+        </label>
+        <label for="ctab-whatsapp-2" class="ctab-btn ctab-btn-whatsapp">WhatsApp</label>
+      </div>
+
+      <div class="ctab-panel panel-telegram-2">
+        <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
+          <button class="btn-gold community-banner-btn">Join Telegram Channel →</button>
+        </a>
+        <p class="community-banner-note">Telegram is our permanent, primary channel — always active, with session links, alerts, and the news feed posted there first.</p>
+      </div>
+
+      <div class="ctab-panel panel-whatsapp-2">
+        <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
+          <button class="btn-green community-banner-btn">Join WhatsApp Group →</button>
+        </a>
+        <p class="community-banner-note">Prefer WhatsApp? This group mirrors everything shared on Telegram, which remains the permanent home base.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- TESTIMONIALS -->
@@ -146,7 +204,7 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
 <section style="padding:64px 40px;background:var(--bg2);border-top:1px solid var(--border);position:relative;z-index:1;">
   <div class="sec-label">Frequently Asked</div>
   <div style="max-width:700px;">
-    {% assign faqs = "Do I need trading experience to join?|No. The sessions are designed for all levels. Beginners get the foundational framework; experienced traders add a geopolitical layer to their existing analysis.,What markets do you cover?|Gold (XAU/USD), Bitcoin (BTC/USD), major Forex pairs (EUR/USD, USD/JPY, GBP/USD, AUD/USD), the US Dollar Index (DXY), and Oil (WTI) as a secondary indicator for Gold and Forex positioning.,Is the group session really free?|Yes, completely. There's no hidden cost, no trial period, and nothing you're funneled into afterward. The only paid option is 1:1 coaching, and that's entirely optional.,How do I join a group session?|Join our WhatsApp community — session times and links are shared there, along with daily market discussion in between sessions.,What's the difference between the group session and 1:1?|The group session is free, live, and covers the general framework alongside other traders. The 1:1 session is paid and built around your specific questions, positions, and risk profile." | split:"," %}
+    {% assign faqs = "Do I need trading experience to join?|No. The sessions are designed for all levels. Beginners get the foundational framework; experienced traders add a geopolitical layer to their existing analysis.,What markets do you cover?|Gold (XAU/USD), Bitcoin (BTC/USD), major Forex pairs (EUR/USD, USD/JPY, GBP/USD, AUD/USD), the US Dollar Index (DXY), and Oil (WTI) as a secondary indicator for Gold and Forex positioning.,Is the group session really free?|Yes, completely. There's no hidden cost, no trial period, and nothing you're funneled into afterward. The only paid option is 1:1 coaching, and that's entirely optional.,How do I join a group session?|Join us on Telegram (our permanent channel) or WhatsApp — session times and links are shared in both, along with daily market discussion in between sessions.,What's the difference between the group session and 1:1?|The group session is free, live, and covers the general framework alongside other traders. The 1:1 session is paid and built around your specific questions, positions, and risk profile." | split:"," %}
     {% for faq in faqs %}
       {% assign fparts = faq | split:"|" %}
       {% assign fi = forloop.index %}
@@ -176,6 +234,91 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
 .mod-hdr{padding:14px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
 .mod-toggle{font-size:16px;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
 .mod-body{padding:0 18px 16px;font-size:12px;line-height:1.8;color:var(--t2);font-weight:300;}
+
+/* COMMUNITY BANNER (TELEGRAM + WHATSAPP TABS) */
+.community-banner-section{
+  border-top:1px solid var(--border-g);
+  border-bottom:1px solid var(--border-g);
+  background:linear-gradient(135deg,rgba(0,200,224,0.06),rgba(212,168,67,0.06));
+  text-align:center;
+  padding:56px 20px;
+  position:relative;z-index:1;
+}
+.community-banner-inner{max-width:720px;margin:0 auto;}
+.community-banner-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:18px;
+}
+.community-banner-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(24px,3.6vw,38px);
+  font-weight:800;
+  line-height:1.25;
+  color:var(--t1);
+  margin-bottom:10px;
+}
+.community-banner-sub{
+  font-size:13px;color:var(--t3);font-weight:300;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;
+}
+.community-banner-points{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:24px;
+}
+.tb-point{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:13px;
+  letter-spacing:0.02em;
+  padding:10px 18px;
+  border-radius:2px;
+  border:1.5px solid;
+}
+.tb-point-gold{color:var(--gold);border-color:var(--gold);background:rgba(212,168,67,0.08);}
+.tb-point-cyan{color:var(--cyan);border-color:var(--cyan);background:rgba(0,200,224,0.08);}
+.community-banner-btn{font-size:14px;padding:16px 36px;}
+.community-banner-note{
+  margin-top:18px;font-size:12px;line-height:1.7;color:var(--t3);font-weight:300;max-width:520px;margin-left:auto;margin-right:auto;
+}
+.btn-green{background:#25D366;color:#fff;border:none;}
+.btn-green:hover{background:#1ebe5b;}
+
+/* COMMUNITY TABS (Telegram / WhatsApp, side by side) */
+.community-tabs{margin-top:4px;}
+.ctab-buttons{
+  display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px;flex-wrap:wrap;
+}
+.ctab-btn{
+  position:relative;
+  border:1.5px solid var(--border);color:var(--t2);
+  font-family:'Inter',sans-serif;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  font-size:12.5px;
+  padding:14px 30px;
+  cursor:pointer;
+  transition:all 0.2s;user-select:none;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+.ctab-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+.ctab-pin{
+  font-size:8px;letter-spacing:0.16em;font-weight:800;
+  color:var(--gold);text-transform:uppercase;
+}
+#ctab-telegram-1:checked ~ .ctab-buttons label[for="ctab-telegram-1"],
+#ctab-telegram-2:checked ~ .ctab-buttons label[for="ctab-telegram-2"]{
+  background:var(--cyan);color:#0D1117;border-color:var(--cyan);
+}
+#ctab-telegram-1:checked ~ .ctab-buttons label[for="ctab-telegram-1"] .ctab-pin,
+#ctab-telegram-2:checked ~ .ctab-buttons label[for="ctab-telegram-2"] .ctab-pin{color:#0D1117;}
+#ctab-whatsapp-1:checked ~ .ctab-buttons label[for="ctab-whatsapp-1"],
+#ctab-whatsapp-2:checked ~ .ctab-buttons label[for="ctab-whatsapp-2"]{
+  background:#25D366;color:#fff;border-color:#25D366;
+}
+.ctab-panel{display:none;}
+#ctab-telegram-1:checked ~ .panel-telegram-1{display:block;}
+#ctab-whatsapp-1:checked ~ .panel-whatsapp-1{display:block;}
+#ctab-telegram-2:checked ~ .panel-telegram-2{display:block;}
+#ctab-whatsapp-2:checked ~ .panel-whatsapp-2{display:block;}
+
 @media(max-width:960px){
   section[style*="padding:80px 40px"]{padding:60px 20px!important;}
   div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
@@ -185,6 +328,10 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
   section[style*="padding:64px 40px"]{padding:44px 20px!important;}
   section[style*="padding:56px 40px"]{padding:40px 20px!important;}
   div[style*="right:-20px"]{display:none!important;}
+}
+@media(max-width:600px){
+  .tb-point{font-size:11.5px;padding:9px 14px;}
+  .ctab-btn{padding:12px 22px;font-size:11px;width:100%;max-width:280px;}
 }
 </style>
 <script>
