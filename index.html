@@ -22,9 +22,9 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
       <a href="/news/"><button class="btn-gold">Today's Intelligence Brief</button></a>
       <a href="/academy/"><button class="btn-outline">Explore Academy →</button></a>
     </div>
-    <div class="hero-telegram">
-      <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
-        <span style="color:var(--cyan);">💬 Join our free Whatsapp community →</span>
+    <div class="hero-community">
+      <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
+        <span style="color:var(--cyan);">💬 Join our free community — Telegram or WhatsApp →</span>
       </a>
     </div>
   </div>
@@ -33,44 +33,55 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 <!-- EMAIL SUBSCRIPTION -->
 {% include subscribe-bar.html %}
 
-<!-- TELEGRAM COMMUNITY BANNER -->
-<section class="section telegram-banner-section">
-  <div class="telegram-banner-inner">
-    <div class="telegram-banner-badge">
+<!-- COMMUNITY BANNER (TELEGRAM + WHATSAPP TABS) -->
+<section class="section community-banner-section">
+  <div class="community-banner-inner">
+    <div class="community-banner-badge">
       <span class="pulse"></span>
       <span>Community · Live</span>
     </div>
-    <h2 class="telegram-banner-title">Join Free Telegram Learning Community</h2>
-    <div class="telegram-banner-points">
-      <span class="tb-point tb-point-gold">Free</span>
-      <span class="tb-point tb-point-cyan">Use VPN for Telegram</span>
-      <span class="tb-point tb-point-gold">Session Links Shared Here + News Feed</span>
+    <h2 class="community-banner-title">Join Our Free Learning Community</h2>
+    <p class="community-banner-sub">Same sessions, same news feed, same alerts — join on whichever app you actually use.</p>
+
+    <div class="community-tabs">
+      <input type="radio" name="community-type" id="ctab-telegram" class="tab-radio" checked>
+      <input type="radio" name="community-type" id="ctab-whatsapp" class="tab-radio">
+
+      <div class="ctab-buttons">
+        <label for="ctab-telegram" class="ctab-btn ctab-btn-telegram">
+          Telegram
+          <span class="ctab-pin">Primary Channel</span>
+        </label>
+        <label for="ctab-whatsapp" class="ctab-btn ctab-btn-whatsapp">WhatsApp</label>
+      </div>
+
+      <div class="ctab-panel panel-telegram">
+        <div class="community-banner-points">
+          <span class="tb-point tb-point-gold">Free</span>
+          <span class="tb-point tb-point-cyan">Use VPN for Telegram</span>
+          <span class="tb-point tb-point-gold">Session Links + News Feed</span>
+        </div>
+        <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
+          <button class="btn-gold community-banner-btn">💬 Join Telegram Community →</button>
+        </a>
+        <p class="community-banner-note">Telegram is our permanent, primary channel — it's always active and the first place session links, alerts, and the live news feed get posted. If it doesn't open in your region, use a VPN.</p>
+      </div>
+
+      <div class="ctab-panel panel-whatsapp">
+        <div class="community-banner-points">
+          <span class="tb-point tb-point-gold">Free</span>
+          <span class="tb-point tb-point-cyan">Use VPN for WhatsApp</span>
+          <span class="tb-point tb-point-gold">Session Links + News Feed</span>
+        </div>
+        <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
+          <button class="btn-green community-banner-btn">💬 Join WhatsApp Community →</button>
+        </a>
+        <p class="community-banner-note">Prefer WhatsApp? This group mirrors everything shared on Telegram. Note: WhatsApp groups are capped and may occasionally need to be refreshed — Telegram remains the permanent home base. If it doesn't open in your region, use a VPN.</p>
+      </div>
     </div>
-    <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
-      <button class="btn-gold telegram-banner-btn">💬 Join Telegram Community →</button>
-    </a>
-    <p class="telegram-banner-note">If Telegram doesn't open or connect in your region, use a VPN — all session links, alerts, and the live news feed are posted there first.</p>
   </div>
 </section>
-<!-- WHATSAPP COMMUNITY BANNER -->
-<section class="section whatsapp-banner-section">
-  <div class="whatsapp-banner-inner">
-    <div class="whatsapp-banner-badge">
-      <span class="pulse"></span>
-      <span>Community · Live</span>
-    </div>
-    <h2 class="whatsapp-banner-title">Join Free WhatsApp Learning Community</h2>
-    <div class="whatsapp-banner-points">
-      <span class="tb-point tb-point-gold">Free</span>
-      <span class="tb-point tb-point-cyan">Use VPN for WhatsApp</span>
-      <span class="tb-point tb-point-gold">Session Links Shared Here + News Feed</span>
-    </div>
-    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
-      <button class="btn-green whatsapp-banner-btn">💬 Join WhatsApp Community →</button>
-    </a>
-    <p class="whatsapp-banner-note">If WhatsApp doesn't open or connect in your region, use a VPN — all session links, alerts, and the live news feed are posted there first.</p>
-  </div>
-</section>
+
 <!-- LIVE MARKET DASHBOARD -->
 <section class="section">
   <div class="sec-label">Live Market Dashboard</div>
@@ -204,8 +215,8 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 .hero-h1 strong{font-weight:700;display:block;}
 .hero-sub{margin-top:22px;font-size:15px;line-height:1.8;color:var(--t2);max-width:480px;font-weight:300;}
 .hero-btns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
-.hero-telegram{margin-top:20px;font-size:12px;letter-spacing:0.06em;}
-.hero-telegram a{text-decoration:none;}
+.hero-community{margin-top:20px;font-size:12px;letter-spacing:0.06em;}
+.hero-community a{text-decoration:none;}
 .asset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .news-feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .news-feed-card{display:block;background:var(--card);border:1px solid var(--border);padding:22px;text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden;}
@@ -227,30 +238,33 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 .ana-preview-card{display:block;background:var(--card);border:1px solid var(--border);padding:24px;text-decoration:none;transition:all 0.25s;}
 .ana-preview-card:hover{border-color:var(--border-g);transform:translateY(-2px);}
 
-/* TELEGRAM BANNER */
-.telegram-banner-section{
+/* COMMUNITY BANNER (TELEGRAM + WHATSAPP TABS) */
+.community-banner-section{
   border-top:1px solid var(--border-g);
   border-bottom:1px solid var(--border-g);
   background:linear-gradient(135deg,rgba(0,200,224,0.06),rgba(212,168,67,0.06));
   text-align:center;
   padding:56px 20px;
 }
-.telegram-banner-inner{max-width:720px;margin:0 auto;}
-.telegram-banner-badge{
+.community-banner-inner{max-width:720px;margin:0 auto;}
+.community-banner-badge{
   display:inline-flex;align-items:center;gap:8px;
   font-size:10px;letter-spacing:0.24em;text-transform:uppercase;
   color:var(--cyan);margin-bottom:18px;
 }
-.telegram-banner-title{
+.community-banner-title{
   font-family:'Syne',sans-serif;
   font-size:clamp(24px,3.6vw,38px);
   font-weight:800;
   line-height:1.25;
   color:var(--t1);
-  margin-bottom:22px;
+  margin-bottom:10px;
 }
-.telegram-banner-points{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:28px;
+.community-banner-sub{
+  font-size:13px;color:var(--t3);font-weight:300;margin-bottom:28px;
+}
+.community-banner-points{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:24px;
 }
 .tb-point{
   font-family:'Inter',sans-serif;
@@ -263,10 +277,44 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 }
 .tb-point-gold{color:var(--gold);border-color:var(--gold);background:rgba(212,168,67,0.08);}
 .tb-point-cyan{color:var(--cyan);border-color:var(--cyan);background:rgba(0,200,224,0.08);}
-.telegram-banner-btn{font-size:14px;padding:16px 36px;}
-.telegram-banner-note{
+.community-banner-btn{font-size:14px;padding:16px 36px;}
+.community-banner-note{
   margin-top:18px;font-size:12px;line-height:1.7;color:var(--t3);font-weight:300;max-width:520px;margin-left:auto;margin-right:auto;
 }
+.btn-green{background:#25D366;color:#fff;border:none;}
+.btn-green:hover{background:#1ebe5b;}
+
+/* COMMUNITY TABS (Telegram / WhatsApp, side by side) */
+.community-tabs{margin-top:4px;}
+.ctab-buttons{
+  display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px;flex-wrap:wrap;
+}
+.ctab-btn{
+  position:relative;
+  border:1.5px solid var(--border);color:var(--t2);
+  font-family:'Inter',sans-serif;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  font-size:12.5px;
+  padding:14px 30px;
+  cursor:pointer;
+  transition:all 0.2s;user-select:none;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+.ctab-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+.ctab-pin{
+  font-size:8px;letter-spacing:0.16em;font-weight:800;
+  color:var(--gold);text-transform:uppercase;
+}
+#ctab-telegram:checked ~ .ctab-buttons label[for="ctab-telegram"]{
+  background:var(--cyan);color:#0D1117;border-color:var(--cyan);
+}
+#ctab-telegram:checked ~ .ctab-buttons label[for="ctab-telegram"] .ctab-pin{color:#0D1117;}
+#ctab-whatsapp:checked ~ .ctab-buttons label[for="ctab-whatsapp"]{
+  background:#25D366;color:#fff;border-color:#25D366;
+}
+.ctab-panel{display:none;}
+#ctab-telegram:checked ~ .panel-telegram{display:block;}
+#ctab-whatsapp:checked ~ .panel-whatsapp{display:block;}
 
 /* SESSION TYPE TABS */
 .session-tabs{margin-top:4px;}
@@ -306,27 +354,8 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
 @media(max-width:600px){
   .news-feed-grid{grid-template-columns:1fr;}
   .tb-point{font-size:11.5px;padding:9px 14px;}
+  .ctab-btn{padding:12px 22px;font-size:11px;width:100%;max-width:280px;}
 }
-
-  <!-- WHATSAPP COMMUNITY BANNER -->
-<section class="section whatsapp-banner-section">
-  <div class="whatsapp-banner-inner">
-    <div class="whatsapp-banner-badge">
-      <span class="pulse"></span>
-      <span>Community · Live</span>
-    </div>
-    <h2 class="whatsapp-banner-title">Join Free WhatsApp Learning Community</h2>
-    <div class="whatsapp-banner-points">
-      <span class="tb-point tb-point-gold">Free</span>
-      <span class="tb-point tb-point-cyan">Use VPN for WhatsApp</span>
-      <span class="tb-point tb-point-gold">Session Links Shared Here + News Feed</span>
-    </div>
-    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
-      <button class="btn-green whatsapp-banner-btn">💬 Join WhatsApp Community →</button>
-    </a>
-    <p class="whatsapp-banner-note">If WhatsApp doesn't open or connect in your region, use a VPN — all session links, alerts, and the live news feed are posted there first.</p>
-  </div>
-</section>
 </style>
 
 <script type="text/javascript">
