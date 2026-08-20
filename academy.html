@@ -37,15 +37,26 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
     <p class="community-banner-sub">Same sessions, same news feed, same alerts — join on whichever app you actually use.</p>
 
     <div class="community-tabs">
-      <input type="radio" name="community-type-1" id="ctab-telegram-1" class="tab-radio" checked>
-      <input type="radio" name="community-type-1" id="ctab-whatsapp-1" class="tab-radio">
+      <input type="radio" name="community-type-1" id="ctab-whatsapp-1" class="tab-radio" checked>
+      <input type="radio" name="community-type-1" id="ctab-telegram-1" class="tab-radio">
 
       <div class="ctab-buttons">
+        <label for="ctab-whatsapp-1" class="ctab-btn ctab-btn-whatsapp">WhatsApp</label>
         <label for="ctab-telegram-1" class="ctab-btn ctab-btn-telegram">
           Telegram
           <span class="ctab-pin">Primary Channel</span>
         </label>
-        <label for="ctab-whatsapp-1" class="ctab-btn ctab-btn-whatsapp">WhatsApp</label>
+      </div>
+
+      <div class="ctab-panel panel-whatsapp-1">
+        <div class="community-banner-points">
+          <span class="tb-point tb-point-gold">Free</span>
+          <span class="tb-point tb-point-gold">Session Links + News Feed</span>
+        </div>
+        <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
+          <button class="btn-green community-banner-btn">💬 Join WhatsApp Community →</button>
+        </a>
+        <p class="community-banner-note">Prefer WhatsApp? This group mirrors everything shared on Telegram. Telegram remains the permanent home base if this group ever needs to be refreshed. If it doesn't open in your region, use a VPN.</p>
       </div>
 
       <div class="ctab-panel panel-telegram-1">
@@ -58,17 +69,6 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
           <button class="btn-gold community-banner-btn">💬 Join Telegram Community →</button>
         </a>
         <p class="community-banner-note">Telegram is our permanent, primary channel — it's always active and the first place session links, alerts, and the live news feed get posted. If it doesn't open in your region, use a VPN.</p>
-      </div>
-
-      <div class="ctab-panel panel-whatsapp-1">
-        <div class="community-banner-points">
-          <span class="tb-point tb-point-gold">Free</span>
-          <span class="tb-point tb-point-gold">Session Links + News Feed</span>
-        </div>
-        <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener">
-          <button class="btn-green community-banner-btn">💬 Join WhatsApp Community →</button>
-        </a>
-        <p class="community-banner-note">Prefer WhatsApp? This group mirrors everything shared on Telegram. Telegram remains the permanent home base if this group ever needs to be refreshed. If it doesn't open in your region, use a VPN.</p>
       </div>
     </div>
   </div>
@@ -155,22 +155,15 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
     <p class="community-banner-sub">Join traders already discussing daily market moves, ask questions, and get a feel for how we think — completely free, no commitment, no upsell waiting on the other side.</p>
 
     <div class="community-tabs">
-      <input type="radio" name="community-type-2" id="ctab-telegram-2" class="tab-radio" checked>
-      <input type="radio" name="community-type-2" id="ctab-whatsapp-2" class="tab-radio">
+      <input type="radio" name="community-type-2" id="ctab-whatsapp-2" class="tab-radio" checked>
+      <input type="radio" name="community-type-2" id="ctab-telegram-2" class="tab-radio">
 
       <div class="ctab-buttons">
+        <label for="ctab-whatsapp-2" class="ctab-btn ctab-btn-whatsapp">WhatsApp</label>
         <label for="ctab-telegram-2" class="ctab-btn ctab-btn-telegram">
           Telegram
           <span class="ctab-pin">Primary Channel</span>
         </label>
-        <label for="ctab-whatsapp-2" class="ctab-btn ctab-btn-whatsapp">WhatsApp</label>
-      </div>
-
-      <div class="ctab-panel panel-telegram-2">
-        <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
-          <button class="btn-gold community-banner-btn">Join Telegram Channel →</button>
-        </a>
-        <p class="community-banner-note">Telegram is our permanent, primary channel — always active, with session links, alerts, and the news feed posted there first.</p>
       </div>
 
       <div class="ctab-panel panel-whatsapp-2">
@@ -178,6 +171,13 @@ description: "Learn to trade Gold, Forex and Bitcoin using geopolitical intellig
           <button class="btn-green community-banner-btn">Join WhatsApp Group →</button>
         </a>
         <p class="community-banner-note">Prefer WhatsApp? This group mirrors everything shared on Telegram, which remains the permanent home base.</p>
+      </div>
+
+      <div class="ctab-panel panel-telegram-2">
+        <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">
+          <button class="btn-gold community-banner-btn">Join Telegram Channel →</button>
+        </a>
+        <p class="community-banner-note">Telegram is our permanent, primary channel — always active, with session links, alerts, and the news feed posted there first.</p>
       </div>
     </div>
   </div>
