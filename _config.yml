@@ -6,7 +6,6 @@ baseurl: ""
 lang: en
 timezone: UTC
 email: "hello@edgeaurum.com"
-
 # Monetization
 gumroad_product_url: "https://gumroad.com/l/YOUR_PRODUCT_ID"
 convertkit_form_id: "YOUR_FORM_ID"
@@ -17,7 +16,6 @@ facebook_url: "https://facebook.com/edgeaurum"
 twitter_url: "https://x.com/edgeaurum"
 twelve_data_key: "f71ae3c3a93f4ebc989ddbd51ab23c03"
 google_analytics: "G-NFHJJJKC2V"
-
 # Build
 markdown: kramdown
 highlighter: rouge
@@ -26,7 +24,6 @@ future: true
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
 # Collections
 collections:
   news:
@@ -35,7 +32,8 @@ collections:
   analysis:
     output: true
     permalink: /analysis/:slug/
-
+  community:
+    output: false
 # Defaults
 defaults:
   - scope:
@@ -50,7 +48,6 @@ defaults:
     values:
       layout: post
       category: analysis
-
 # Pagination v2
 pagination:
   enabled: true
@@ -59,7 +56,6 @@ pagination:
   title: ":title - Page :num"
   sort_field: date
   sort_reverse: true
-
 # Plugins
 plugins:
   - jekyll-feed
@@ -68,13 +64,11 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-redirect-from
   - jekyll-last-modified-at
-
 # Feed
 feed:
   collections:
     news:
       path: feed.xml
-
 # SEO
 twitter:
   username: edgeaurum
@@ -84,15 +78,12 @@ social:
   links:
     - https://x.com/edgeaurum
     - https://t.me/edgeaurum
-
 # Last Modified At
 last-modified-at:
   date-format: "%Y-%m-%d %H:%M:%S"
-
 # Include admin folder so CMS config.yml is served
 include:
   - admin
-
 # Exclude
 exclude:
   - README.md
