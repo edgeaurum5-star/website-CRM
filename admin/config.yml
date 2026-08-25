@@ -165,6 +165,57 @@ collections:
         widget:   "image"
         required: false
 
+  - name:           "community"
+    label:          "📣 Community Board"
+    label_singular: "Community Post"
+    description:    "Class session links, updates, and resources — shown on /community/ and the homepage."
+    folder:         "_community"
+    create:         true
+    slug:           "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+    fields:
+      - label:   "Title"
+        name:    "title"
+        widget:  "string"
+        hint:    "e.g. Live Group Session Tonight — Gold & Fed Reaction"
+
+      - label:   "Publish Date"
+        name:    "date"
+        widget:  "datetime"
+
+      - label:   "Type"
+        name:    "type"
+        widget:  "select"
+        options:
+          - { label: "🎓 Class Session", value: "Class Session" }
+          - { label: "🟢 News",          value: "News"          }
+          - { label: "📎 Resource",      value: "Resource"      }
+        default: "News"
+
+      - label:    "Link (optional)"
+        name:     "link"
+        widget:   "string"
+        required: false
+        hint:     "Telegram, WhatsApp, Zoom, or article URL for this post"
+
+      - label:    "Link Button Text"
+        name:     "link_label"
+        widget:   "string"
+        required: false
+        default:  "Open Link"
+
+      - label:    "Short Excerpt"
+        name:     "excerpt"
+        widget:   "text"
+        required: false
+        hint:     "1–2 sentences, shown on the community board and homepage widget."
+
+      - label:   "Pin to top?"
+        name:    "pinned"
+        widget:  "boolean"
+        default: false
+        hint:    "Pinned posts always show above regular ones (e.g. 'Class starts in 1 hour')."
+
   - name:  "settings"
     label: "⚙️  Site Settings"
     files:
