@@ -1,0 +1,20 @@
+{% assign post = include.post %}
+<div class="comm-card{% if post.pinned %} is-pinned{% endif %}">
+  {% if post.type == "Class Session" %}
+    <span class="comm-badge comm-badge-session">🎓 Session</span>
+  {% elsif post.type == "Resource" %}
+    <span class="comm-badge comm-badge-resource">📎 Resource</span>
+  {% else %}
+    <span class="comm-badge comm-badge-news">🟢 News</span>
+  {% endif %}
+  <div class="comm-body">
+    <div class="comm-title">{{ post.title }}</div>
+    {% if post.excerpt %}<div class="comm-excerpt">{{ post.excerpt }}</div>{% endif %}
+    <div class="comm-meta">
+      <span class="comm-date">{{ post.date | date: "%b %d, %Y · %I:%M %p" }}</span>
+      {% if post.link %}
+        <a href="{{ post.link }}" target="_blank" rel="noopener" class="comm-link-btn">{{ post.link_label | default: "Open Link" }} →</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
