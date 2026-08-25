@@ -80,34 +80,7 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
     </div>
   </div>
 </section>
-<!--
-  INSERT THIS SECTION INTO index.html
-  Suggested spot: right after the "COMMUNITY BANNER (TELEGRAM + WHATSAPP TABS)" section,
-  and before "LIVE MARKET DASHBOARD".
--->
-<section class="section" style="padding-top:44px;padding-bottom:44px;">
-  <div class="sec-label">Latest From The Team</div>
-  <div class="comm-feed" style="max-width:820px;margin:0 auto;">
-    {% assign recent_updates = site.community | sort: "date" | reverse %}
-    {% for post in recent_updates limit:3 %}
-      {% include community-card.html post=post %}
-    {% else %}
-    <div class="card">
-      <p style="color:var(--t3);font-size:13px;">No community posts yet.</p>
-    </div>
-    {% endfor %}
-  </div>
-  <div style="margin-top:20px;text-align:center;">
-    <a href="/community/"><button class="btn-outline">View Community Board →</button></a>
-  </div>
-</section>
 
-<!--
-  NOTE: this reuses the same .comm-* CSS classes and community-card.html include
-  defined for /community/. Make sure community.html's <style> block (or a shared
-  stylesheet) is loaded on the homepage too, or move those .comm-* styles into
-  your site's global CSS file so they're available on every page.
--->
 <!-- LIVE MARKET DASHBOARD -->
 <section class="section">
   <div class="sec-label">Live Market Dashboard</div>
@@ -381,6 +354,36 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
   .news-feed-grid{grid-template-columns:1fr;}
   .tb-point{font-size:11.5px;padding:9px 14px;}
   .ctab-btn{padding:12px 22px;font-size:11px;width:100%;max-width:280px;}
+}
+
+/* COMMUNITY BOARD WIDGET (shared with /community/) */
+.comm-feed{display:flex;flex-direction:column;gap:12px;}
+.comm-card{
+  display:flex;align-items:flex-start;gap:18px;
+  background:var(--card);border:1px solid var(--border);
+  padding:22px 24px;transition:border-color 0.2s;
+}
+.comm-card:hover{border-color:rgba(255,255,255,0.14);}
+.comm-card.is-pinned{border-color:var(--border-g);}
+.comm-badge{
+  flex-shrink:0;font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;
+  padding:5px 10px;white-space:nowrap;margin-top:2px;
+}
+.comm-badge-session{background:rgba(212,168,67,0.12);color:var(--gold);}
+.comm-badge-news{background:rgba(0,200,224,0.1);color:var(--cyan);}
+.comm-badge-resource{background:rgba(255,255,255,0.06);color:var(--t3);}
+.comm-body{flex:1;min-width:0;}
+.comm-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--t1);margin-bottom:6px;}
+.comm-excerpt{font-size:12.5px;line-height:1.7;color:var(--t2);font-weight:300;margin-bottom:12px;}
+.comm-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.comm-date{font-size:9px;letter-spacing:0.2em;color:var(--t4);text-transform:uppercase;}
+.comm-link-btn{
+  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  color:#0D1117;background:var(--gold);padding:8px 16px;text-decoration:none;display:inline-block;
+}
+.comm-link-btn:hover{opacity:0.9;}
+@media(max-width:640px){
+  .comm-card{flex-direction:column;gap:10px;padding:18px 20px;}
 }
 </style>
 
