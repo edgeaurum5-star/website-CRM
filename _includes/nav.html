@@ -27,8 +27,8 @@
     <a href="/analysis/" {% if page.url contains '/analysis' %}class="active"{% endif %}>Analysis</a>
     <a href="/academy/"  {% if page.url contains '/academy'  %}class="active"{% endif %}>Academy</a>
     <a href="/community/" {% if page.url contains '/community' %}class="active"{% endif %}>Community</a>
-    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener" style="color:var(--cyan)!important;">Whatsapp ↗</a>
     <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener" style="color:var(--cyan)!important;">Telegram ↗</a>
+    <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener" style="color:var(--cyan)!important;">Whatsapp ↗</a>
     <a href="/academy/" class="nav-cta">Join Academy</a>
   </div>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -44,7 +44,7 @@
   <a href="/analysis/">Analysis</a>
   <a href="/academy/">Academy</a>
   <a href="/community/">Community</a>
-  <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener" style="color:var(--cyan)!important;">Whatsapp ↗</a>
   <a href="{{ s.telegram_url | default: 'https://t.me/+BIVXclDlKyxlMjI0' }}" target="_blank" rel="noopener">Telegram Community ↗</a>
+  <a href="{{ s.whatsapp_url | default: 'https://chat.whatsapp.com/Dnk81nFxZre1mOrWfxul95' }}" target="_blank" rel="noopener" style="color:var(--cyan)!important;">Whatsapp ↗</a>
   <a href="/academy/" style="color:var(--gold);">Join Academy →</a>
 </div>
