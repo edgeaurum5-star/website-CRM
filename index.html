@@ -80,7 +80,34 @@ description: "Daily geopolitical intelligence decoded into Gold, Forex & Bitcoin
     </div>
   </div>
 </section>
+<!--
+  INSERT THIS SECTION INTO index.html
+  Suggested spot: right after the "COMMUNITY BANNER (TELEGRAM + WHATSAPP TABS)" section,
+  and before "LIVE MARKET DASHBOARD".
+-->
+<section class="section" style="padding-top:44px;padding-bottom:44px;">
+  <div class="sec-label">Latest From The Team</div>
+  <div class="comm-feed" style="max-width:820px;margin:0 auto;">
+    {% assign recent_updates = site.community | sort: "date" | reverse %}
+    {% for post in recent_updates limit:3 %}
+      {% include community-card.html post=post %}
+    {% else %}
+    <div class="card">
+      <p style="color:var(--t3);font-size:13px;">No community posts yet.</p>
+    </div>
+    {% endfor %}
+  </div>
+  <div style="margin-top:20px;text-align:center;">
+    <a href="/community/"><button class="btn-outline">View Community Board →</button></a>
+  </div>
+</section>
 
+<!--
+  NOTE: this reuses the same .comm-* CSS classes and community-card.html include
+  defined for /community/. Make sure community.html's <style> block (or a shared
+  stylesheet) is loaded on the homepage too, or move those .comm-* styles into
+  your site's global CSS file so they're available on every page.
+-->
 <!-- LIVE MARKET DASHBOARD -->
 <section class="section">
   <div class="sec-label">Live Market Dashboard</div>
