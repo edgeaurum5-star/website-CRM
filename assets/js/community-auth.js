@@ -3,7 +3,7 @@
 // Requires: Supabase project (see community-accounts-setup.md)
 // ═══════════════════════════════════════
 
-const SUPABASE_URL = "sb_publishable_gsnVQbwIIFH3SzBPB-S0-w_7Tt0RRwN";       // e.g. https://xxxxx.supabase.co
+const SUPABASE_URL = "https://xmgojcskzezfoylccfkx.supabase.co";       // e.g. https://xxxxx.supabase.co
 const SUPABASE_ANON_KEY = "sb_publishable_gsnVQbwIIFH3SzBPB-S0-w_7Tt0RRwN";     // the public "anon" key, safe to expose
 
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
