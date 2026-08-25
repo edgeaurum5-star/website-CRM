@@ -207,6 +207,36 @@ footer { position:relative; z-index:1; background:var(--bg2); border-top:1px sol
 .fbtn:hover { border-color:var(--gold); color:var(--gold); }
 .fbtn.active { background:var(--gold-dim); border-color:var(--border-g); color:var(--gold); }
 
+/* ── COMMUNITY BOARD (used on /community/ and the homepage widget) ── */
+.comm-feed{display:flex;flex-direction:column;gap:12px;}
+.comm-card{
+  display:flex;align-items:flex-start;gap:18px;
+  background:var(--card);border:1px solid var(--border);
+  padding:22px 24px;transition:border-color 0.2s;
+}
+.comm-card:hover{border-color:rgba(255,255,255,0.14);}
+.comm-card.is-pinned{border-color:var(--border-g);}
+.comm-badge{
+  flex-shrink:0;font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;
+  padding:5px 10px;white-space:nowrap;margin-top:2px;
+}
+.comm-badge-session{background:rgba(212,168,67,0.12);color:var(--gold);}
+.comm-badge-news{background:rgba(0,200,224,0.1);color:var(--cyan);}
+.comm-badge-resource{background:rgba(255,255,255,0.06);color:var(--t3);}
+.comm-body{flex:1;min-width:0;}
+.comm-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--t1);margin-bottom:6px;}
+.comm-excerpt{font-size:12.5px;line-height:1.7;color:var(--t2);font-weight:300;margin-bottom:12px;}
+.comm-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.comm-date{font-size:9px;letter-spacing:0.2em;color:var(--t4);text-transform:uppercase;}
+.comm-link-btn{
+  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  color:#0D1117;background:var(--gold);padding:8px 16px;text-decoration:none;display:inline-block;
+}
+.comm-link-btn:hover{opacity:0.9;}
+@media(max-width:640px){
+  .comm-card{flex-direction:column;gap:10px;padding:18px 20px;}
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width:1100px) {
   .nav-links a:not(.nav-cta) { padding:7px 8px; font-size:10px; }
